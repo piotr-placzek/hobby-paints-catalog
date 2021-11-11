@@ -2,9 +2,11 @@
   "name": "hobby-paints-catalog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
+    "jest": "TZ=UTC jest",
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,21 @@
   "bugs": {
     "url": "https://github.com/piotr-placzek/hobby-paints-catalog/issues"
   },
-  "homepage": "https://github.com/piotr-placzek/hobby-paints-catalog#readme"
+  "homepage": "https://github.com/piotr-placzek/hobby-paints-catalog#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-eslint": "^24.0.0",
+    "grunt-run": "^0.8.1",
+    "jest": "^27.3.1",
+    "jit-grunt": "^0.10.0",
+    "path": "^0.12.7"
+  }
 }
