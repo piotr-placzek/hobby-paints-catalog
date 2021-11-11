@@ -1,7 +1,8 @@
 'use strict';
+const config = require('./shared/config');
 
 function main() {
-    console.log('main');
+    console.log('NODE_ENV', config.NODE_ENV);
 }
 
-module.exports = main;
+main();
