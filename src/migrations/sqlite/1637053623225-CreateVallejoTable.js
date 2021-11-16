@@ -4,7 +4,7 @@ module.exports = class CreateVallejoTable1637053623225 {
     async up(queryRunner) {
         await queryRunner.query(
             `
-            CREATE TABLE vallejo_paints (
+            CREATE TABLE IF NOT EXISTS vallejo_paints (
                 id INTEGER PRIMARY KEY,
                 catalog_number TEXT,
                 trade_name TEXT NOT NULL,

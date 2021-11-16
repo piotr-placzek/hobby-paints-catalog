@@ -4,7 +4,7 @@ module.exports = class CreateScale75Table1637053813903 {
     async up(queryRunner) {
         await queryRunner.query(
             `
-            CREATE TABLE scale75_paints (
+            CREATE TABLE IF NOT EXISTS scale75_paints (
                 id INTEGER PRIMARY KEY,
                 catalog_number TEXT,
                 trade_name TEXT NOT NULL,

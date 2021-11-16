@@ -4,7 +4,7 @@ module.exports = class CreateArmyPainterTable1637053746626 {
     async up(queryRunner) {
         await queryRunner.query(
             `
-            CREATE TABLE army_painter_paints (
+            CREATE TABLE IF NOT EXISTS army_painter_paints (
                 id INTEGER PRIMARY KEY,
                 catalog_number TEXT,
                 trade_name TEXT NOT NULL,
