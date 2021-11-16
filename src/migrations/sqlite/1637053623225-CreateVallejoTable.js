@@ -21,4 +21,3 @@ module.exports = class CreateVallejoTable1637053623225 {
         );
     }
 };
-        

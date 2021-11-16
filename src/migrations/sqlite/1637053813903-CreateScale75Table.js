@@ -21,4 +21,3 @@ module.exports = class CreateScale75Table1637053813903 {
         );
     }
 };
-        

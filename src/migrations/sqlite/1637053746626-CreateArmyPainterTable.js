@@ -21,4 +21,3 @@ module.exports = class CreateArmyPainterTable1637053746626 {
         );
     }
 };
-        
