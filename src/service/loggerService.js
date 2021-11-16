@@ -11,6 +11,7 @@ class LoggerService {
      * @param {string} name
      * @param {object} logger
      * @memberof LoggerService
+     * @constructor
      */
     constructor(name, logger = console) {
         this.name = name;
@@ -19,6 +20,8 @@ class LoggerService {
 
     /**
      * @param {string} msg
+     * @memberof LoggerService
+     * @access public
      */
     log(msg) {
         this.logger.log(
@@ -31,6 +34,8 @@ class LoggerService {
 
     /**
      * @param {string} msg
+     * @memberof LoggerService
+     * @access public
      */
     info(msg) {
         this.logger.log(
@@ -43,6 +48,8 @@ class LoggerService {
 
     /**
      * @param {string} msg
+     * @memberof LoggerService
+     * @access public
      */
     error(msg) {
         this.logger.log(
@@ -55,6 +62,8 @@ class LoggerService {
 
     /**
      * @param {string} msg
+     * @memberof LoggerService
+     * @access public
      */
     debug(msg) {
         this.logger.log(
@@ -65,6 +74,11 @@ class LoggerService {
         );
     }
 
+    /**
+     * @memberof LoggerService
+     * @access private
+     * @returns {string} date
+     */
     _date() {
         return new Date().toUTCString();
     }
