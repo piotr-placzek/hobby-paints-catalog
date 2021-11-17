@@ -16,7 +16,7 @@ module.exports = {
             AIR: process.env.CATALOG_URL_GW_AIR,
             CONTRAST: process.env.CATALOG_URL_GW_CONTRAST,
             DRY: process.env.CATALOG_URL_GW_DRY,
-            SHADE: process.env.CATALOG_URL_GW_SHADE,
+            SHADE: process.env.CATALOG_URL_GW_SHADE
         }
-    } 
+    }
 };
