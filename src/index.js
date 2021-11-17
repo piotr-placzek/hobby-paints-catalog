@@ -14,7 +14,7 @@ async function importGamesWorkshopPaintsCatalog(_db) {
 async function main() {
     const db = new DB(config.SQLITE);
 
-    const scrapeGwFlag = process.argv.indexOf('--scrape-gw') >= 0
+    const scrapeGwFlag = process.argv.indexOf('--scrape-gw') >= 0;
     if (scrapeGwFlag) {
         await importGamesWorkshopPaintsCatalog(db);
     }
