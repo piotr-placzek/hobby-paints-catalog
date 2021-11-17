@@ -1,10 +1,10 @@
 // const { MigrationInterface, QueryRunner } = require("typeorm");
 
-module.exports = class CreateGamesWorkshopTable1636724130553 {
+module.exports = class CreateVallejoTable1637053623225 {
     async up(queryRunner) {
         await queryRunner.query(
             `
-            CREATE TABLE IF NOT EXISTS games_workshop_paints (
+            CREATE TABLE IF NOT EXISTS vallejo_paints (
                 id INTEGER PRIMARY KEY,
                 catalog_number TEXT,
                 trade_name TEXT NOT NULL,
@@ -17,7 +17,7 @@ module.exports = class CreateGamesWorkshopTable1636724130553 {
 
     async down(queryRunner) {
         await queryRunner.query(
-            'DROP TABLE games_workshop_paints;'
+            'DROP TABLE vallejo_paints;'
         );
     }
 };
