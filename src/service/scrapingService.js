@@ -19,7 +19,7 @@ async function getHtmlSource(url) {
 /**
  * @param {string} html
  * @param {Function} strategy
- * @returns {Object}
+ * @returns {Product[]}
  */
 async function scrap(html, strategy) {
     const C = await cheerio.load(html);
