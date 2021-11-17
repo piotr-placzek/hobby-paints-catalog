@@ -1,15 +1,23 @@
 'use strict';
+
 const config = require('./shared/config');
-const LoggerService = require('./service/loggerService');
+const DB = require('./shared/db');
+const { importPaintsCatalog } = require('./service/scrapingService');
+const gwScrapingStrategy = require('./strategy/gwScrapingStrategy');
 
-const logger = new LoggerService('main');
+async function importGamesWorkshopPaintsCatalog(_db) {
+    console.time('importGamesWorkshopPaintsCatalog');
+    await importPaintsCatalog(Object.values(config.CATALOG_URL.GW), gwScrapingStrategy);
+    console.timeEnd('importGamesWorkshopPaintsCatalog');
+}
 
-function main() {
-    console.log('NODE_ENV', config.NODE_ENV);
-    logger.log('test log');
-    logger.error('test error');
-    logger.info('test info');
-    logger.debug('test debug');
+async function main() {
+    const db = new DB(config.SQLITE);
+
+    const scrapeGwFlag = process.argv.indexOf('--scrape-gw') >= 0
+    if (scrapeGwFlag) {
+        await importGamesWorkshopPaintsCatalog(db);
+    }
 }
 
 main();
