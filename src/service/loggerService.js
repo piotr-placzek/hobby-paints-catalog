@@ -21,62 +21,64 @@ class LoggerService {
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    log(msg) {
+    log() {
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[log]' +
             `[${this.name}]` +
             separator +
-            msg
+            this._buildMessageString(arguments)
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    info(msg) {
+    info() {
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[info]'.blue +
             `[${this.name}]` +
             separator +
-            msg
+            this._buildMessageString(arguments)
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    error(msg) {
+    error() {
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[error]'.red +
             `[${this.name}]` +
             separator +
-            msg.red
+            this._buildMessageString(arguments)
+            .red
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    debug(msg) {
+    debug() {
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[debug]'.green +
             `[${this.name}]` +
             separator +
-            msg.italic
+            this._buildMessageString(arguments)
+            .italic
         );
     }
 
@@ -87,6 +89,21 @@ class LoggerService {
      */
     _date() {
         return new Date().toUTCString();
+    }
+
+    /**
+     * @param {*[]} argv 
+     * @memberof LoggerService
+     * @access private
+     * @returns {string} msg
+     */
+    _buildMessageString(args) {
+        return Object.values(args).map(
+            (arg) => {
+                if (typeof arg === 'object') return JSON.stringify(arg);
+                else return arg;
+            }
+        ).join(' ');
     }
 };
 
