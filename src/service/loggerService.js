@@ -26,8 +26,8 @@ class LoggerService {
     log(msg) {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[log]' +
+            `[${this.name}]` +
             ` > ${msg}`
         );
     }
@@ -40,8 +40,8 @@ class LoggerService {
     info(msg) {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[info]'.blue +
+            `[${this.name}]` +
             ` > ${msg}`
         );
     }
@@ -54,8 +54,8 @@ class LoggerService {
     error(msg) {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[error]'.red +
+            `[${this.name}]` +
             ` > ${msg}`.red
         );
     }
@@ -68,8 +68,8 @@ class LoggerService {
     debug(msg) {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[debug]'.green +
+            `[${this.name}]` +
             ` > ${msg}`.italic
         );
     }
