@@ -2,6 +2,8 @@
 
 // eslint-disable-next-line
 const colors = require('colors');
+const config = require('../shared/config');
+const separator = config.LOGGER_SEPARATOR;
 
 /**
  * @class
@@ -28,7 +30,8 @@ class LoggerService {
             `[${this._date()}]`.yellow +
             '[log]' +
             `[${this.name}]` +
-            ` > ${msg}`
+            separator + 
+            msg
         );
     }
 
@@ -42,7 +45,8 @@ class LoggerService {
             `[${this._date()}]`.yellow +
             '[info]'.blue +
             `[${this.name}]` +
-            ` > ${msg}`
+            separator + 
+            msg
         );
     }
 
@@ -56,7 +60,8 @@ class LoggerService {
             `[${this._date()}]`.yellow +
             '[error]'.red +
             `[${this.name}]` +
-            ` > ${msg}`.red
+            separator + 
+            msg.red
         );
     }
 
@@ -70,7 +75,8 @@ class LoggerService {
             `[${this._date()}]`.yellow +
             '[debug]'.green +
             `[${this.name}]` +
-            ` > ${msg}`.italic
+            separator + 
+            msg.italic
         );
     }
 
