@@ -62,7 +62,7 @@ class LoggerService {
             `[${this.name}]` +
             separator +
             this._buildMessageString(arguments)
-            .red
+                .red
         );
     }
 
@@ -78,7 +78,7 @@ class LoggerService {
             `[${this.name}]` +
             separator +
             this._buildMessageString(arguments)
-            .italic
+                .italic
         );
     }
 
@@ -92,7 +92,7 @@ class LoggerService {
     }
 
     /**
-     * @param {*[]} argv 
+     * @param {*[]} argv
      * @memberof LoggerService
      * @access private
      * @returns {string} msg
