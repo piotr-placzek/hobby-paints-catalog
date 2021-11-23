@@ -4,6 +4,7 @@ require('dotenv').config();
 
 module.exports = {
     NODE_ENV: process.env.NODE_ENV,
+    LOGGER_SEPARATOR: process.env.LOGGER_SEPARATOR,
     SEQUELIZE: require('../config/db.json'),
     CATALOG_URL: {
         GW: {

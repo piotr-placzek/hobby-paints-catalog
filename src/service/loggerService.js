@@ -2,6 +2,8 @@
 
 // eslint-disable-next-line
 const colors = require('colors');
+const config = require('../shared/config');
+const separator = config.LOGGER_SEPARATOR;
 
 /**
  * @class
@@ -19,58 +21,64 @@ class LoggerService {
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    log(msg) {
+    log() {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[log]' +
-            `\t > ${msg}`
+            `[${this.name}]` +
+            separator +
+            this._buildMessageString(arguments)
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    info(msg) {
+    info() {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[info]'.blue +
-            `\t > ${msg}`
+            `[${this.name}]` +
+            separator +
+            this._buildMessageString(arguments)
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    error(msg) {
+    error() {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[error]'.red +
-            `\t > ${msg}`.red
+            `[${this.name}]` +
+            separator +
+            this._buildMessageString(arguments)
+                .red
         );
     }
 
     /**
-     * @param {string} msg
+     * @param {*} msg
      * @memberof LoggerService
      * @access public
      */
-    debug(msg) {
+    debug() {
         this.logger.log(
             `[${this._date()}]`.yellow +
-            `[${this.name}]` +
             '[debug]'.green +
-            `\t > ${msg}`.italic
+            `[${this.name}]` +
+            separator +
+            this._buildMessageString(arguments)
+                .italic
         );
     }
 
@@ -81,6 +89,21 @@ class LoggerService {
      */
     _date() {
         return new Date().toUTCString();
+    }
+
+    /**
+     * @param {*[]} argv
+     * @memberof LoggerService
+     * @access private
+     * @returns {string} msg
+     */
+    _buildMessageString(args) {
+        return Object.values(args).map(
+            (arg) => {
+                if (typeof arg === 'object') return JSON.stringify(arg);
+                else return arg;
+            }
+        ).join(' ');
     }
 };
 
