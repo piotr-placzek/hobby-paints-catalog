@@ -1,9 +1,9 @@
 'use strict';
-const Product = require('../model/product');
+const db = require('../shared/db');
 
 /**
  * @param {cheerio} cheerio cheerio object with loaded html
- * @returns {Product[]}
+ * @returns {GameWorkshopPaint[]}
  */
 function gwScrapingStrategy(cheerio) {
     const products = [];
@@ -20,14 +20,22 @@ function gwScrapingStrategy(cheerio) {
 
 /**
  * @param {string} imageUrl
- * @returns {Product}
+ * @returns {GameWorkshopPaint}
  */
 function productFactory(imageUrl) {
+    /**
+     * @param {string} imageUrl
+     * @returns {string}
+     */
     const getFileName = (imageUrl) => {
         const p = imageUrl.split('/');
         return p[p.length - 1];
     };
 
+    /**
+     * @param {string} tradeNameWithSeries
+     * @returns {string}
+     */
     const extractSeries = (tradeNameWithSeries) => {
         const series = ['base', 'layer', 'air', 'contrast', 'dry', 'shade', 'technical', 'spray'];
         for (const s of series) {
@@ -38,6 +46,10 @@ function productFactory(imageUrl) {
         return 'unknown';
     };
 
+    /**
+     * @param {string} fileName
+     * @returns {string}
+     */
     const splitFileName = (fileName) => {
         const split = fileName.split('.')[0].split('_');
         const series = extractSeries(split[1]);
@@ -53,7 +65,12 @@ function productFactory(imageUrl) {
     const fileName = getFileName(imageUrl);
     const product = splitFileName(fileName);
 
-    return new Product(undefined, product.catalogNumber, product.tradeName, product.series, imageUrl);
+    return db.GameWorkshopPaint.build({
+        catalog_number: product.catalogNumber,
+        trade_name: product.tradeName,
+        series: product.series,
+        image_url: imageUrl
+    });
 }
 
 module.exports = gwScrapingStrategy;
