@@ -5,10 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "jest": "TZ=UTC jest",
+    "jest": "TZ=UTC jest --silent",
     "test": "grunt test",
-    "migration:run:sqlite": "./node_modules/typeorm/cli.js migration:run -f src/migrations/sqlite/ormconfig.json",
-    "migration:create:sqlite": "./node_modules/typeorm/cli.js migration:create --outputJs -f src/migrations/sqlite/ormconfig.json -n"
+    "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
+    "migration:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,8 @@
     "grunt-run": "^0.8.1",
     "jest": "^27.3.1",
     "jit-grunt": "^0.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize-cli": "^6.3.0"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
@@ -42,7 +43,7 @@
     "dotenv": "^10.0.0",
     "fs-extra": "^10.0.0",
     "puppeteer": "^11.0.0",
-    "sqlite3": "^5.0.2",
-    "typeorm": "^0.2.40"
+    "sequelize": "^6.12.0-alpha.1",
+    "sqlite3": "^5.0.2"
   }
 }
