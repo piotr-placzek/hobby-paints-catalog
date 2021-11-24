@@ -2,13 +2,8 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('GameWorkshopPaints', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
       catalog_number: {
+        primaryKey: true,
         type: Sequelize.STRING
       },
       trade_name: {

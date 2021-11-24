@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   GameWorkshopPaint.init({
-    catalog_number: DataTypes.STRING,
+    catalog_number: {type: DataTypes.STRING, primaryKey: true},
     trade_name: DataTypes.STRING,
     series: DataTypes.STRING,
     image_url: DataTypes.STRING
