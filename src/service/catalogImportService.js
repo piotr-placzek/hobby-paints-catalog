@@ -8,7 +8,7 @@ const LoggerService = require('./loggerService');
 const logger = new LoggerService('catalog-import-service');
 
 /**
- * @returns {GameWorkshopPaint[]} entities that could not be saved in the database 
+ * @returns {GameWorkshopPaint[]} entities that could not be saved in the database
  */
 async function importGamesWorkshopPaintsCatalog() {
     await db.GameWorkshopPaint.destroy({ truncate: true });
@@ -23,8 +23,7 @@ async function importGamesWorkshopPaintsCatalog() {
     for (let i = 0; i < result.length; i++) {
         try {
             await result[i].save();
-        }
-        catch (e) {
+        } catch (e) {
             cantSave.push(result[i]);
             logger.error('can not save entity', i + 1, result[i].catalog_number, result[i].trade_name);
         }
@@ -35,4 +34,4 @@ async function importGamesWorkshopPaintsCatalog() {
 
 module.exports = {
     importGamesWorkshopPaintsCatalog
-}
+};
