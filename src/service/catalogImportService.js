@@ -42,7 +42,7 @@ async function importVallejoAcrylicsPaintsCatalog() {
 
     const src = [];
     for(const [series, url] of Object.entries(config.CATALOG_URL.VA)) {
-        const MAX = config.CATALOG_LIMITATIONS.VA[series].PAGES;
+        const MAX = config.CATALOG_LIMITATIONS.VA[`${series}_PAGES`];
         for(let p=1; p<=MAX; p++) {
             src.push(
                 `${url}/page/${p}/`
