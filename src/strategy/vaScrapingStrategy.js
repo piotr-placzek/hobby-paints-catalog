@@ -34,7 +34,7 @@ function vaScrapingStrategy(cheerio) {
  * @returns {string}
  */
 function extractSeries(productUrl) {
-    return productUrl.split('/')[5].split('-').slice(0,-1).join(' ');
+    return productUrl.split('/')[5].split('-').slice(0, -1).join(' ');
 }
 
 module.exports = vaScrapingStrategy;

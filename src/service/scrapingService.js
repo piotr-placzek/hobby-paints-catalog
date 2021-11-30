@@ -10,7 +10,7 @@ const logger = new LoggerService('scraping-service');
  * @param {string[]} src
  * @param {Function} strategy
  */
-async function importPaintsCatalog(src, strategy) {
+async function scrapePaintsCatalog(src, strategy) {
     const result = [];
     for (let i = 0; i < src.length; i++) {
         const url = src[i];
@@ -46,5 +46,5 @@ async function scrape(html, strategy) {
 }
 
 module.exports = {
-    importPaintsCatalog
+    scrapePaintsCatalog
 };
