@@ -14,6 +14,16 @@ module.exports = {
             CONTRAST: process.env.CATALOG_URL_GW_CONTRAST,
             DRY: process.env.CATALOG_URL_GW_DRY,
             SHADE: process.env.CATALOG_URL_GW_SHADE
+        },
+        VA: {
+            MODEL_COLOR: process.env.CATALOG_URL_VA_MODEL_COLOR
+        }
+    },
+    CATALOG_LIMITATIONS: {
+        VA: {
+            MODEL_COLOR: {
+                PAGES: process.env.CATALOG_URL_VA_MODEL_COLOR_PAGES
+            }
         }
     }
 };
