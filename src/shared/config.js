@@ -24,6 +24,9 @@ module.exports = {
             METAL_COLOR: process.env.CATALOG_URL_VA_METAL_COLOR,
             PANZER_ACES: process.env.CATALOG_URL_VA_PANZER_ACES,
             MECHA_COLOR: process.env.CATALOG_URL_VA_MECHA_COLOR
+        },
+        AP: {
+            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS
         }
     },
     CATALOG_LIMITATIONS: {
