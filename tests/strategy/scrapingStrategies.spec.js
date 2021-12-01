@@ -3,6 +3,7 @@
 const cheerio = require("cheerio");
 const gwScrapingStrategy = require("../../src/strategy/gwScrapingStrategy");
 const vaScrapingStrategy = require("../../src/strategy/vaScrapingStrategy");
+const apScrapingStrategy = require("../../src/strategy/apScrapingStrategy");
 
 describe('Scraping strategies', () => {
     it('Games Workshop', async () => {
@@ -77,4 +78,64 @@ describe('Scraping strategies', () => {
         expect(result).toMatchObject(expected);
     });
 
+    if('Army Painter', async () => {
+        const expected = {
+            catalog_number: 'WP1101',
+            trade_name: 'Matt Black',
+            series: 'Warpaints',
+            image_url: 'https://admin.thearmypainter.com/files/products/Warpaints Single 2020/thumbs/WP1101-Matt Black-1 copy.jpg'
+        };
+        const htmlContainer =
+        `
+        <table width="480" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td width="130" valign="top" height="189">
+                        <div class="left padBot10 padRight10"><a title="Matt Black #0"
+                                href="https://admin.thearmypainter.com/files/products/Warpaints Single 2020/WP1101_Warpaint_P-Photo_2016.png"
+                                class="fancybox" rel="gal-100103"><img
+                                    src="https://admin.thearmypainter.com/files/products/Warpaints Single 2020/thumbs/WP1101-Matt Black-1 copy.jpg"
+                                    width="120" height="120" border="0"></a></div>
+                        <div class="left padTop12"><a title="Matt Black #1"
+                                href="https://admin.thearmypainter.com/files/products/Warpaints 2016/WP-hex-all.png"
+                                class="fancybox" rel="gal-100103"><img
+                                    src="https://admin.thearmypainter.com/files/products/Warpaints 2016/thumbs/WP-hex-all.png"
+                                    width="55" height="55" border="0"></a></div>
+                        <div class="left padTop12 padLeft10"><a title="Matt Black #2"
+                                href="https://admin.thearmypainter.com/files/products/Warpaints 2016/match-CP3001-1280x.png"
+                                class="fancybox" rel="gal-100103"><img
+                                    src="https://admin.thearmypainter.com/files/products/Warpaints 2016/thumbs/match-CP3001-1280x.png"
+                                    width="55" height="55" border="0"></a></div>
+                        <div class="clear"></div>
+                        <div class="padTop12"></div>
+                        <div class="clear"></div>
+                    </td>
+                    <td width="280" valign="top" class="padTop3">
+                        <a name="Matt Black" class="AnchorTag"></a>
+                        <h3>Matt Black</h3>
+                        <div>Utilizing loads of heavy pigment for an excellent coverage the Warpaints has been specifically
+                            designed to compliment an already existing range; this paint is a 100% match of the Colour Primer of
+                            the same name.</div>
+                    </td>
+                    <td width="70" valign="top" align="right">
+                        <form action="" method="post">
+                            <input type="hidden" name="productid" value="100103">
+                            <input type="hidden" name="name" value="Matt Black">
+                            <input type="hidden" name="price" value="2.75">
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="image" src="gfx/cart_add.png" onclick=" addbasket( this.form ); return false; ">
+                        </form>
+                        <br><br>
+                        <div class="padRight5"><b>Price</b><br>€2.75</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        `;
+
+        const C = await cheerio.load(htmlContainer);
+        const result = apScrapingStrategy(C)[0];
+
+        expect(result).toMatchObject(expected);
+    });
 });
