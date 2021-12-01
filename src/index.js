@@ -6,6 +6,11 @@ async function main() {
     if (scrapeGwFlag) {
         await catalogImportService.importGamesWorkshopPaintsCatalog();
     }
+
+    const scrapeVaFlag = process.argv.indexOf('--scrape-va') >= 0;
+    if (scrapeVaFlag) {
+        await catalogImportService.importVallejoAcrylicsPaintsCatalog();
+    }
 }
 
 main();
