@@ -24,6 +24,9 @@ module.exports = {
             METAL_COLOR: process.env.CATALOG_URL_VA_METAL_COLOR,
             PANZER_ACES: process.env.CATALOG_URL_VA_PANZER_ACES,
             MECHA_COLOR: process.env.CATALOG_URL_VA_MECHA_COLOR
+        },
+        SC: {
+            SCALECOLOR: process.env.CATALOG_URL_SC_SCALECOLOR
         }
     },
     CATALOG_LIMITATIONS: {
@@ -36,6 +39,10 @@ module.exports = {
             METAL_COLOR_PAGES: process.env.CATALOG_URL_VA_METAL_COLOR,
             PANZER_ACES_PAGES: process.env.CATALOG_URL_VA_PANZER_ACES,
             MECHA_COLOR_PAGES: process.env.CATALOG_URL_VA_MECHA_COLOR
+        },
+        SC: {
+            SCALECOLOR_PAGES: process.env.CATALOG_URL_SC_SCALECOLOR_PAGES,
+            SCALECOLOR_PREFIX: process.env.CATALOG_URL_SC_SCALECOLOR_PREFIX
         }
     }
 };
