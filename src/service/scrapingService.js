@@ -4,17 +4,17 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const LoggerService = require('../service/loggerService');
 
-const logger = new LoggerService('games-workshop-sraper');
+const logger = new LoggerService('scraping-service');
 
 /**
  * @param {string[]} src
  * @param {Function} strategy
  */
-async function importPaintsCatalog(src, strategy) {
+async function scrapePaintsCatalog(src, strategy) {
     const result = [];
     for (let i = 0; i < src.length; i++) {
         const url = src[i];
-        logger.info(`scrapping with ${strategy.name} > ${url}`);
+        logger.info(`scraping with ${strategy.name} > ${url}`);
         const html = await getHtmlSource(url);
         const data = await scrape(html, strategy);
         result.push(...data);
@@ -46,5 +46,5 @@ async function scrape(html, strategy) {
 }
 
 module.exports = {
-    importPaintsCatalog
+    scrapePaintsCatalog
 };
