@@ -3,47 +3,28 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.addColumn('Scale75Paint', 'va_raplacemnts', {
+      queryInterface.addColumn('Scale75Paints', 'va_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('va_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('va_raplacemnts', val.join(';'));
-        }
+        allowNull: true
       }),
 
-      queryInterface.addColumn('Scale75Paint', 'ap_raplacemnts', {
+      queryInterface.addColumn('Scale75Paints', 'ap_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('ap_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('ap_raplacemnts', val.join(';'));
-        }
+        allowNull: true
       }),
 
-      queryInterface.addColumn('Scale75Paint', 'gw_raplacemnts', {
+      queryInterface.addColumn('Scale75Paints', 'gw_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('gw_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('gw_raplacemnts', val.join(';'));
-        }
-      }),
-
+        allowNull: true
+      })
     ];
   },
 
   down: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.removeColumn('Scale75Paint', 'va_raplacemnts'),
-      queryInterface.removeColumn('Scale75Paint', 'ap_raplacemnts'),
-      queryInterface.removeColumn('Scale75Paint', 'gw_raplacemnts'),
+      queryInterface.removeColumn('Scale75Paints', 'va_raplacements'),
+      queryInterface.removeColumn('Scale75Paints', 'ap_raplacements'),
+      queryInterface.removeColumn('Scale75Paints', 'gw_raplacements')
     ];
   }
 };

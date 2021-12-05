@@ -3,47 +3,28 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.addColumn('GameWorkshopPaint', 'va_raplacemnts', {
+      queryInterface.addColumn('GameWorkshopPaints', 'va_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('va_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('va_raplacemnts', val.join(';'));
-        }
+        allowNull: true
       }),
 
-      queryInterface.addColumn('GameWorkshopPaint', 'ap_raplacemnts', {
+      queryInterface.addColumn('GameWorkshopPaints', 'ap_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('ap_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('ap_raplacemnts', val.join(';'));
-        }
+        allowNull: true
       }),
 
-      queryInterface.addColumn('GameWorkshopPaint', 'sc_raplacemnts', {
+      queryInterface.addColumn('GameWorkshopPaints', 'sc_raplacements', {
         type: Sequelize.STRING,
-        allowNull: true,
-        get() {
-          return this.getDataValue('sc_raplacemnts').split(';');
-        },
-        set(val) {
-          this.setDataValue('sc_raplacemnts', val.join(';'));
-        }
-      }),
-
+        allowNull: true
+      })
     ];
   },
 
   down: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.removeColumn('GameWorkshopPaint', 'va_raplacemnts'),
-      queryInterface.removeColumn('GameWorkshopPaint', 'ap_raplacemnts'),
-      queryInterface.removeColumn('GameWorkshopPaint', 'sc_raplacemnts'),
+      queryInterface.removeColumn('GameWorkshopPaints', 'va_raplacements'),
+      queryInterface.removeColumn('GameWorkshopPaints', 'ap_raplacements'),
+      queryInterface.removeColumn('GameWorkshopPaints', 'sc_raplacements')
     ];
   }
 };
