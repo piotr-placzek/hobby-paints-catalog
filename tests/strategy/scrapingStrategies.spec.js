@@ -87,6 +87,7 @@ describe('Scraping strategies', () => {
         };
         const htmlContainer =
         `
+        <body><table><table>
         <table width="480" cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -131,6 +132,7 @@ describe('Scraping strategies', () => {
                 </tr>
             </tbody>
         </table>
+        </table></table></body>
         `;
 
         const C = await cheerio.load(htmlContainer);
