@@ -11,6 +11,11 @@ async function main() {
     if (scrapeVaFlag) {
         await catalogImportService.importVallejoAcrylicsPaintsCatalog();
     }
+
+    const scrapeApFlag = process.argv.indexOf('--scrape-ap') >= 0;
+    if (scrapeApFlag) {
+        await catalogImportService.importArmyPainterPaintsCatalog();
+    }
 }
 
 main();
