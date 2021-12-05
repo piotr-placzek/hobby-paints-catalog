@@ -6,7 +6,6 @@ const db = require('../shared/db');
  * @returns {VallejoPaint[]}
  */
 function vaScrapingStrategy(cheerio) {
-    console.log('scraping strategy');
     const products = [];
     const selector = 'li.product.type-product>div.product-wrapper';
     cheerio(selector).each(

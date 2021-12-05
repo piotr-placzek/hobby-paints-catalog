@@ -2,9 +2,10 @@
 const db = require('../shared/db');
 const config = require('../shared/config');
 const { scrapePaintsCatalog } = require('./scrapingService');
-const gwScrapingStrategy = require('../strategy/gwScrapingStrategy');
 const LoggerService = require('./loggerService');
+const gwScrapingStrategy = require('../strategy/gwScrapingStrategy');
 const vaScrapingStrategy = require('../strategy/vaScrapingStrategy');
+const apScrapingStrategy = require('../strategy/apScrapingStrategy');
 
 const logger = new LoggerService('catalog-import-service');
 
@@ -62,7 +63,15 @@ async function importVallejoAcrylicsPaintsCatalog() {
     return importPaintsCatalog('vallejo', src, vaScrapingStrategy, db.VallejoPaint);
 }
 
+/**
+ * @returns {ArmyPainterPaint[]} entities that could not be saved in the database
+ */
+async function importArmyPainterPaintsCatalog() {
+    return importPaintsCatalog('army painter', Object.values(config.CATALOG_URL.AP), apScrapingStrategy, db.ArmyPainterPaint);
+}
+
 module.exports = {
     importGamesWorkshopPaintsCatalog,
-    importVallejoAcrylicsPaintsCatalog
+    importVallejoAcrylicsPaintsCatalog,
+    importArmyPainterPaintsCatalog
 };
