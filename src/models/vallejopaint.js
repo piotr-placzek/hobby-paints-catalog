@@ -22,30 +22,30 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
       get() {
-        return this.getDataValue('gw_raplacements').split(';');
+        return Set(this.getDataValue('gw_raplacements').split(';'));
       },
       set(val) {
-        this.setDataValue('gw_raplacements', val.join(';'));
+        this.setDataValue('gw_raplacements', Array.from(val).join(';'));
       }
     },
     ap_raplacements: {
       type: DataTypes.STRING,
       allowNull: true,
       get() {
-        return this.getDataValue('ap_raplacements').split(';');
+        return Set(this.getDataValue('ap_raplacements').split(';'));
       },
       set(val) {
-        this.setDataValue('ap_raplacements', val.join(';'));
+        this.setDataValue('ap_raplacements', Array.from(val).join(';'));
       }
     },
     sc_raplacements: {
       type: DataTypes.STRING,
       allowNull: true,
       get() {
-        return this.getDataValue('sc_raplacements').split(';');
+        return Set(this.getDataValue('sc_raplacements').split(';'));
       },
       set(val) {
-        this.setDataValue('sc_raplacements', val.join(';'));
+        this.setDataValue('sc_raplacements', Array.from(val).join(';'));
       }
     }
   }, {
