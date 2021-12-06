@@ -33,6 +33,7 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.models = Object.keys(db).filter(k => k.toLocaleLowerCase() !== 'sequelize');
 
 logger.info('database ready');
 module.exports = db;
