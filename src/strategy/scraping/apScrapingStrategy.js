@@ -1,5 +1,5 @@
 'use strict';
-const db = require('../shared/db');
+const db = require('../../shared/db');
 
 /**
  * @param {*} cheerio cheerio object with loaded html

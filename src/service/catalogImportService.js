@@ -3,9 +3,9 @@ const db = require('../shared/db');
 const config = require('../shared/config');
 const { scrapePaintsCatalog } = require('./scrapingService');
 const LoggerService = require('./loggerService');
-const gwScrapingStrategy = require('../strategy/gwScrapingStrategy');
-const vaScrapingStrategy = require('../strategy/vaScrapingStrategy');
-const apScrapingStrategy = require('../strategy/apScrapingStrategy');
+const gwScrapingStrategy = require('../strategy/scraping/gwScrapingStrategy');
+const vaScrapingStrategy = require('../strategy/scraping/vaScrapingStrategy');
+const apScrapingStrategy = require('../strategy/scraping/apScrapingStrategy');
 
 const logger = new LoggerService('catalog-import-service');
 
