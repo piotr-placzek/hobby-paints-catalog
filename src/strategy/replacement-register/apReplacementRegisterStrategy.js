@@ -1,6 +1,6 @@
 'use strict';
 
-const replacementRegisterStrategy = require("./replacementRegisterStrategy");
+const replacementRegisterStrategy = require('./replacementRegisterStrategy');
 
 /**
  * @param {Map} replacements

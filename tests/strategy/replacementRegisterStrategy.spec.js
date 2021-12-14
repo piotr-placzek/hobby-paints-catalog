@@ -1,9 +1,18 @@
 'use strict';
 
+const fse = require('fs-extra');
 const replacementsStrategies = require('../../src/strategy/replacement-register');
-const Replacements = require('../../src/contract/replacements');
+
 
 describe('Replacements register strategies', () => {
+    let db;
+
+    beforeAll(() => {
+        process.env.NODE_ENV = 'test';
+        fse.copyFileSync('./database_development.sqlite', './database_test.sqlite');
+        db = require('../../src/shared/db');
+    });
+
     it('can import gwReplacementRegisterStrategy', () => {
         expect(replacementsStrategies.gwReplacementRegisterStrategy).not.toBe(undefined);
     });
@@ -16,45 +25,23 @@ describe('Replacements register strategies', () => {
         expect(replacementsStrategies.apReplacementRegisterStrategy).not.toBe(undefined);
     });
 
+    it('can import scReplacementRegisterStrategy', () => {
+        expect(replacementsStrategies.scReplacementRegisterStrategy).not.toBe(undefined);
+    });
+
     it('gwReplacementRegisterStrategy', async () => {
-        const gwReplacements = new Set(['Nuln Oil']);
-        const apReplacements = new Set(['Dark Tone']);
-        const replacements = new Replacements(gwReplacements, null, apReplacements);
+        // TODO: check replacements values
+    });
 
-        const gwModelMock = {
-            save: jest.fn(),
-            findOne: jest.fn().mockResolvedValue({
-                catalog_number: 'CAT_GW',
-                trade_name: 'Nuln Oil',
-                series: '',
-                image_url: '',
-                va_replacements: new Set(),
-                ap_replacements: new Set(),
-                sc_replacements: new Set()
-            })
-        };
+    it('vaReplacementRegisterStrategy', async () => {
+        // TODO: check replacements values
+    });
 
-        const apModelMock = {
-            save: jest.fn(),
-            findOne: jest.fn().mockResolvedValue({
-                catalog_number: 'CAT_AP',
-                trade_name: 'Dark Tone',
-                series: '',
-                image_url: '',
-                va_replacements: new Set(),
-                gw_replacements: new Set(),
-                sc_replacements: new Set()
-            })
-        };
+    it('apReplacementRegisterStrategy', async () => {
+        // TODO: check replacements values
+    });
 
-        const db = {
-            GameWorkshopPaint: gwModelMock,
-            ArmyPainterPaint: apModelMock
-        };
-
-        const result = replacementsStrategies.gwReplacementRegisterStrategy(replacements.getMap(), db);
-
-        expect(result).resolves.toBe(undefined);
-        // TODO verify replacements assignments
+    it('scReplacementRegisterStrategy', async () => {
+        // TODO: check replacements values
     });
 });

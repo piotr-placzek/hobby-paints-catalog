@@ -1,5 +1,8 @@
 'use strict';
 
+const Logger = require('../../service/loggerService');
+const logger = new Logger('replacements-strategy');
+
 /**
  * @param {string} targetModelName
  * @param {Map} replacements
@@ -11,7 +14,7 @@ async function replacementRegisterStrategy(targetModelName, replacements, db) {
         const target = replacementsMap.get(targetModelName);
         replacementsMap.delete(targetModelName);
 
-        await setReplacements(targetModelName, target.values, target.columnName, replacementsMap, db);
+        await setReplacements(targetModelName, target.values, replacementsMap, db);
     }
 }
 
@@ -21,37 +24,43 @@ async function replacementRegisterStrategy(targetModelName, replacements, db) {
  * @param {string} targetColumnName
  * @param {Map} replacementsMap
  * @param {*} db
+ * @returns {Model[]} entities that could not be saved in the database
  */
-async function setReplacements(targetModelName, targetTradeNames, targetColumnName, replacementsMap, db) {
+async function setReplacements(targetModelName, targetTradeNames, replacementsMap, db) {
     const targetTradeNamesCount = targetTradeNames.length;
+    const cantSave = [];
     for (let i = 0; i < targetTradeNamesCount; i++) {
         const targetTradeName = targetTradeNames[i];
         const target = await getRecord(targetModelName, targetTradeName, db);
         const replacements = await getReplacementsColumnsWithValues(replacementsMap, db);
+        let dataForUpdate = {};
+
         for (const [column, values] of Object.entries(replacements)) {
-            target[column] = new Set([...target[column], ...values]);
+            const currentValues = target[column] ? Array.from(target[column]) : [];
+            const newValues = [...currentValues, ...values];
+            dataForUpdate = Object.assign(dataForUpdate, getDataForUpdate(column, newValues));
         }
-        await target.save();
-        // updateReplacementsWithTarget(target.catalog_number, targetColumnName, replacementsMap, db);
+
+        try {
+            await target.update(dataForUpdate);
+        } catch (error) {
+            logger.error('can not save entity', i + 1, target.catalog_number, target.trade_name);
+            logger.debug(error);
+        }
     }
+
+    return cantSave;
 }
 
 /**
- * @param {string} targetCatalogNumber
- * @param {string} targetColumnName
- * @param {Map} replacementsMap
- * @param {*} db
+ * @param {string} columnName
+ * @param {string[]} values
+ * @returns {Object}
  */
-async function updateReplacementsWithTarget(targetCatalogNumber, targetColumnName, replacementsMap, db) {
-    for (const [modelName, replacements] of replacementsMap) {
-        const replacemetsCount = replacements.values.length;
-        for (let i = 0; i < replacemetsCount; i++) {
-            const replacementName = replacements.values[i];
-            const row = await getRecord(modelName, replacementName, db);
-            row[targetColumnName].add(targetCatalogNumber);
-            await row.save();
-        }
-    }
+function getDataForUpdate(columnName, values) {
+    const obj = {};
+    obj[columnName] = new Set(values);
+    return obj;
 }
 
 /**
@@ -67,9 +76,11 @@ async function getReplacementsColumnsWithValues(replacementsMap, db) {
         for (let i = 0; i < valuesCount; i++) {
             const replacemetName = values[i];
             const row = await getRecord(modelName, replacemetName, db);
-            resutl[columnName] ?
-                (resutl[columnName] = [row.catalog_number]) :
-                resutl[columnName].push(row.catalog_number);
+            // eslint-disable-next-line no-prototype-builtins
+            if (!resutl.hasOwnProperty(columnName)) {
+                resutl[columnName] = [];
+            }
+            resutl[columnName].push(row.catalog_number);
         }
     }
     return resutl;
