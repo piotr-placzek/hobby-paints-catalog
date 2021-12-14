@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 const Replacements = require('../../contract/replacements');
 const Logger = require('../../service/loggerService');
 
-const logger = new Logger('predefioned-conversion][mini-emporium');
+const logger = new Logger('predefined-conversion][mini-emporium');
 
 /**
  * @param {string} file
