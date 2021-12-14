@@ -76,7 +76,7 @@ async function registerSpecificReplacements(
     db
 ) {
     try {
-        logger.info(`creating ${setName} replacemnts`);
+        logger.info(`creating ${setName} replacements`);
         const json = readConversionJsonFn();
         const replacements = replacementsFactoryFn(json);
         for (let i = 0; i < replacements.length; i++) {
