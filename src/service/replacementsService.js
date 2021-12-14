@@ -13,7 +13,7 @@ async function registerReplacements(replacements, db) {
         try {
             await strategy(replacements, db, logger);
         } catch (error) {
-            logger.error(error);
+            logger.error(error.message);
         }
     }
 }
