@@ -106,5 +106,3 @@ dist
 # Database
 *.sqlite
 *.sqlite-journal
-
-prettier.config.js
