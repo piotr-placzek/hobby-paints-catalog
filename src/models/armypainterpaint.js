@@ -13,38 +13,41 @@ module.exports = (sequelize, DataTypes) => {
   }
   ArmyPainterPaint.init(
     {
-      catalog_number: DataTypes.STRING,
+      catalog_number: {type: DataTypes.STRING, primaryKey: true},
       trade_name: DataTypes.STRING,
       series: DataTypes.STRING,
       image_url: DataTypes.STRING,
-      va_raplacements: {
+      va_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return Set(this.getDataValue('va_raplacements').split(';'));
+          const currentValue = this.getDataValue('va_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('va_raplacements', Array.from(val).join(';'));
+          this.setDataValue('va_replacements', Array.from(val).join(';'));
         }
       },
-      gw_raplacements: {
+      gw_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return Set(this.getDataValue('gw_raplacements').split(';'));
+          const currentValue = this.getDataValue('gw_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('gw_raplacements', Array.from(val).join(';'));
+          this.setDataValue('gw_replacements', Array.from(val).join(';'));
         }
       },
-      sc_raplacements: {
+      sc_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return Set(this.getDataValue('sc_raplacements').split(';'));
+          const currentValue = this.getDataValue('sc_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('sc_raplacements', Array.from(val).join(';'));
+          this.setDataValue('sc_replacements', Array.from(val).join(';'));
         }
       }
     },
