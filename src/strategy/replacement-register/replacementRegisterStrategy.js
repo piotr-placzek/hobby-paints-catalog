@@ -9,13 +9,11 @@ const logger = new Logger('replacements-strategy');
  * @param {*} db
  */
 async function replacementRegisterStrategy(targetModelName, replacements, db) {
-    if (replacements.has(targetModelName)) {
-        const replacementsMap = new Map(replacements);
-        const target = replacementsMap.get(targetModelName);
-        replacementsMap.delete(targetModelName);
+    const replacementsMap = new Map(replacements);
+    const target = replacementsMap.get(targetModelName);
+    replacementsMap.delete(targetModelName);
 
-        await setReplacements(targetModelName, target.values, replacementsMap, db);
-    }
+    await setReplacements(targetModelName, target.values, replacementsMap, db);
 }
 
 /**
