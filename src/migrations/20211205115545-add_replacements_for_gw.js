@@ -3,17 +3,17 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.addColumn('GameWorkshopPaints', 'va_raplacements', {
+      queryInterface.addColumn('GameWorkshopPaints', 'va_replacements', {
         type: Sequelize.STRING,
         allowNull: true
       }),
 
-      queryInterface.addColumn('GameWorkshopPaints', 'ap_raplacements', {
+      queryInterface.addColumn('GameWorkshopPaints', 'ap_replacements', {
         type: Sequelize.STRING,
         allowNull: true
       }),
 
-      queryInterface.addColumn('GameWorkshopPaints', 'sc_raplacements', {
+      queryInterface.addColumn('GameWorkshopPaints', 'sc_replacements', {
         type: Sequelize.STRING,
         allowNull: true
       })
@@ -22,9 +22,9 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     return [
-      queryInterface.removeColumn('GameWorkshopPaints', 'va_raplacements'),
-      queryInterface.removeColumn('GameWorkshopPaints', 'ap_raplacements'),
-      queryInterface.removeColumn('GameWorkshopPaints', 'sc_raplacements')
+      queryInterface.removeColumn('GameWorkshopPaints', 'va_replacements'),
+      queryInterface.removeColumn('GameWorkshopPaints', 'ap_replacements'),
+      queryInterface.removeColumn('GameWorkshopPaints', 'sc_replacements')
     ];
   }
 };

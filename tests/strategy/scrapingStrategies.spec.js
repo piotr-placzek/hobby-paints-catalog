@@ -1,9 +1,9 @@
 'use strict';
 
 const cheerio = require("cheerio");
-const gwScrapingStrategy = require("../../src/strategy/gwScrapingStrategy");
-const vaScrapingStrategy = require("../../src/strategy/vaScrapingStrategy");
-const apScrapingStrategy = require("../../src/strategy/apScrapingStrategy");
+const gwScrapingStrategy = require("../../src/strategy/scraping/gwScrapingStrategy");
+const vaScrapingStrategy = require("../../src/strategy/scraping/vaScrapingStrategy");
+const apScrapingStrategy = require("../../src/strategy/scraping/apScrapingStrategy");
 
 describe('Scraping strategies', () => {
     it('Games Workshop', async () => {

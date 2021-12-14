@@ -13,38 +13,41 @@ module.exports = (sequelize, DataTypes) => {
   }
   Scale75Paint.init(
     {
-      catalog_number: DataTypes.STRING,
+      catalog_number: {type: DataTypes.STRING, primaryKey: true},
       trade_name: DataTypes.STRING,
       series: DataTypes.STRING,
       image_url: DataTypes.STRING,
-      va_raplacements: {
+      va_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('va_raplacements').split(';');
+          const currentValue = this.getDataValue('va_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('va_raplacements', val.join(';'));
+          this.setDataValue('va_replacements', Array.from(val).join(';'));
         }
       },
-      ap_raplacements: {
+      ap_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('ap_raplacements').split(';');
+          const currentValue = this.getDataValue('ap_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('ap_raplacements', val.join(';'));
+          this.setDataValue('ap_replacements', Array.from(val).join(';'));
         }
       },
-      gw_raplacements: {
+      gw_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('gw_raplacements').split(';');
+          const currentValue = this.getDataValue('gw_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('gw_raplacements', val.join(';'));
+          this.setDataValue('gw_replacements', Array.from(val).join(';'));
         }
       }
     },

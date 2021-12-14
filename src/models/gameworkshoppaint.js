@@ -17,34 +17,37 @@ module.exports = (sequelize, DataTypes) => {
       trade_name: DataTypes.STRING,
       series: DataTypes.STRING,
       image_url: DataTypes.STRING,
-      va_raplacements: {
+      va_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('va_raplacements').split(';');
+          const currentValue = this.getDataValue('va_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('va_raplacements', val.join(';'));
+          this.setDataValue('va_replacements', Array.from(val).join(';'));
         }
       },
-      ap_raplacements: {
+      ap_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('ap_raplacements').split(';');
+          const currentValue = this.getDataValue('ap_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('ap_raplacements', val.join(';'));
+          this.setDataValue('ap_replacements', Array.from(val).join(';'));
         }
       },
-      sc_raplacements: {
+      sc_replacements: {
         type: DataTypes.STRING,
         allowNull: true,
         get() {
-          return this.getDataValue('sc_raplacements').split(';');
+          const currentValue = this.getDataValue('sc_replacements');
+          return currentValue ? new Set(currentValue.split(';')) : new Set();
         },
         set(val) {
-          this.setDataValue('sc_raplacements', val.join(';'));
+          this.setDataValue('sc_replacements', Array.from(val).join(';'));
         }
       }
     },
