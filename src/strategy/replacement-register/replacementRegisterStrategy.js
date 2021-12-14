@@ -13,7 +13,7 @@ async function replacementRegisterStrategy(targetModelName, replacements, db) {
     const target = replacementsMap.get(targetModelName);
     replacementsMap.delete(targetModelName);
 
-    await setReplacements(targetModelName, target.values, replacementsMap, db);
+    await setReplacements(targetModelName, Array.from(target.values), replacementsMap, db);
 }
 
 /**
@@ -67,21 +67,23 @@ function getDataForUpdate(columnName, values) {
  * @returns {Object} based at db structure. assign array of primary keys to replacments column name
  */
 async function getReplacementsColumnsWithValues(replacementsMap, db) {
-    const resutl = {};
+    const result = {};
     for (const [modelName, replacementsColumnWithValues] of replacementsMap) {
         const { columnName, values } = replacementsColumnWithValues;
-        const valuesCount = values.length;
+        const valuesArray = Array.from(values);
+        //! values is Set  iterate here over Set!
+        const valuesCount = valuesArray.length;
         for (let i = 0; i < valuesCount; i++) {
-            const replacemetName = values[i];
+            const replacemetName = valuesArray[i];
             const row = await getRecord(modelName, replacemetName, db);
             // eslint-disable-next-line no-prototype-builtins
-            if (!resutl.hasOwnProperty(columnName)) {
-                resutl[columnName] = [];
+            if (!result.hasOwnProperty(columnName)) {
+                result[columnName] = [];
             }
-            resutl[columnName].push(row.catalog_number);
+            result[columnName].push(row.catalog_number);
         }
     }
-    return resutl;
+    return result;
 }
 
 // eslint-disable camelcase
