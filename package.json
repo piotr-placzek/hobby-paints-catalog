@@ -5,11 +5,16 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "jest": "TZ=UTC jest --silent",
-    "test": "grunt test",
+    "jest": "NODE_ENV=test TZ=UTC jest --silent",
+    "test": "NODE_ENV=test grunt test",
     "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
     "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models"
+    "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
+    "scrape:all": "node src/index.js --scrape-gw --scrape-va --scrape-ap",
+    "scrape:gw": "node src/index.js --scrape-gw",
+    "scrape:va": "node src/index.js --scrape-va",
+    "scrape:ap": "node src/index.js --scrape-ap"
+
   },
   "repository": {
     "type": "git",
