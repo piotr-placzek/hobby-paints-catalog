@@ -1,17 +1,8 @@
 'use strict';
 
-const fse = require('fs-extra');
 const replacementsStrategies = require('../../src/strategy/replacement-register');
 
-
 describe('Replacements register strategies', () => {
-    let db;
-
-    beforeAll(() => {
-        process.env.NODE_ENV = 'test';
-        fse.copyFileSync('./database_development.sqlite', './database_test.sqlite');
-        db = require('../../src/shared/db');
-    });
 
     it('can import gwReplacementRegisterStrategy', () => {
         expect(replacementsStrategies.gwReplacementRegisterStrategy).not.toBe(undefined);
