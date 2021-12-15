@@ -15,7 +15,6 @@
     "scrape:gw": "node src/index.js --scrape-gw",
     "scrape:va": "node src/index.js --scrape-va",
     "scrape:ap": "node src/index.js --scrape-ap"
-
   },
   "repository": {
     "type": "git",
@@ -51,6 +50,7 @@
     "fs-extra": "^10.0.0",
     "puppeteer": "^11.0.0",
     "sequelize": "^6.12.0-alpha.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "yargs": "^17.3.0"
   }
 }
