@@ -36,28 +36,28 @@ function replacementsFactory(data, specializedFactory) {
 /**
  * @returns {strnig[][]}
  */
-function readConversionJson_GWAP() {
-    return readConversionJson(`${__dirname}/gwap.json`);
+function readConversionJson_GWAP() { // eslint-disable-line camelcase
+    return readConversionJson(`${__dirname}/gwap.json`); // eslint-disable-line node/no-path-concat
 }
 
 /**
  * @returns {strnig[][]}
  */
-function readConversionJson_GWVA() {
-    return readConversionJson(`${__dirname}/gwva.json`);
+function readConversionJson_GWVA() { // eslint-disable-line camelcase
+    return readConversionJson(`${__dirname}/gwva.json`); // eslint-disable-line node/no-path-concat
 }
 
 /**
  * @returns {Replacements}
  */
-function replacementsFactory_GWAP(data) {
+function replacementsFactory_GWAP(data) { // eslint-disable-line camelcase
     return replacementsFactory(data, (gw, ap) => new Replacements(new Set([gw]), undefined, new Set([ap])));
 }
 
 /**
  * @returns {Replacements}
  */
-function replacementsFactory_GWVA(data) {
+function replacementsFactory_GWVA(data) { // eslint-disable-line camelcase
     return replacementsFactory(data, (gw, va) => new Replacements(new Set([gw]), new Set([va])));
 }
 
