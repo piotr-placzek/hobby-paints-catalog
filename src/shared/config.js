@@ -34,13 +34,13 @@ module.exports = {
     CATALOG_LIMITATIONS: {
         VA: {
             MODEL_COLOR_PAGES: process.env.CATALOG_URL_VA_MODEL_COLOR_PAGES,
-            MODEL_AIR_PAGES: process.env.CATALOG_URL_VA_MODEL_AIR,
-            GAME_COLOR_PAGES: process.env.CATALOG_URL_VA_GAME_COLOR,
-            GAME_AIR_PAGES: process.env.CATALOG_URL_VA_GAME_AIR,
-            LIQUID_GOLD_PAGES: process.env.CATALOG_URL_VA_LIQUID_GOLD,
-            METAL_COLOR_PAGES: process.env.CATALOG_URL_VA_METAL_COLOR,
-            PANZER_ACES_PAGES: process.env.CATALOG_URL_VA_PANZER_ACES,
-            MECHA_COLOR_PAGES: process.env.CATALOG_URL_VA_MECHA_COLOR
+            MODEL_AIR_PAGES: process.env.CATALOG_URL_VA_MODEL_AIR_PAGES,
+            GAME_COLOR_PAGES: process.env.CATALOG_URL_VA_GAME_COLOR_PAGES,
+            GAME_AIR_PAGES: process.env.CATALOG_URL_VA_GAME_AIR_PAGES,
+            LIQUID_GOLD_PAGES: process.env.CATALOG_URL_VA_LIQUID_GOLD_PAGES,
+            METAL_COLOR_PAGES: process.env.CATALOG_URL_VA_METAL_COLOR_PAGES,
+            PANZER_ACES_PAGES: process.env.CATALOG_URL_VA_PANZER_ACES_PAGES,
+            MECHA_COLOR_PAGES: process.env.CATALOG_URL_VA_MECHA_COLOR_PAGES
         }
     }
 };
