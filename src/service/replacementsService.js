@@ -11,10 +11,9 @@ const logger = new LoggerService('replacements-service');
 async function registerReplacements(replacements, db) {
     for (const strategy of Object.values(registerStrategies)) {
         try {
-            logger.info(`registering replacements with ${strategy.name}`);
-            await strategy(replacements, db);
+            await strategy(replacements, db, logger);
         } catch (error) {
-            logger.error(error);
+            logger.error(error.message);
         }
     }
 }

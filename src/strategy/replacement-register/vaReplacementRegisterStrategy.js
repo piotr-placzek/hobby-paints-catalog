@@ -6,9 +6,12 @@ const replacementRegisterStrategy = require('./replacementRegisterStrategy');
  * @param {Map} replacements
  * @param {*} db
  */
-async function vaReplacementRegisterStrategy(replacements, db) {
+async function vaReplacementRegisterStrategy(replacements, db, logger) {
     const targetModelName = 'VallejoPaint';
-    await replacementRegisterStrategy(targetModelName, replacements, db);
+    if (replacements.has(targetModelName)) {
+        logger.info('registering replacements with vaReplacementRegisterStrategy');
+        await replacementRegisterStrategy(targetModelName, replacements, db);
+    }
 }
 
 module.exports = vaReplacementRegisterStrategy;
