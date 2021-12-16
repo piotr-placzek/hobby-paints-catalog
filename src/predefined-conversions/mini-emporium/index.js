@@ -2,9 +2,6 @@
 
 const fse = require('fs-extra');
 const Replacements = require('../../contract/replacements');
-const Logger = require('../../service/loggerService');
-
-const logger = new Logger('predefined-conversion][mini-emporium');
 
 /**
  * @param {string} file
@@ -14,8 +11,7 @@ function readConversionJson(file) {
     try {
         const content = fse.readJsonSync(file);
         return content;
-    } catch (error) {
-        logger.error(`Read file error. File: ${file}`);
+    } catch (_) {
         return [];
     }
 }
@@ -69,21 +65,15 @@ function replacementsFactory_GWVA(data) { // eslint-disable-line camelcase
  * @param {*} db
  */
 async function registerSpecificReplacements(
-    setName,
     readConversionJsonFn,
     replacementsFactoryFn,
     replacementsService,
     db
 ) {
-    try {
-        logger.info(`creating ${setName} replacements`);
-        const json = readConversionJsonFn();
-        const replacements = replacementsFactoryFn(json);
-        for (let i = 0; i < replacements.length; i++) {
-            await replacementsService.registerReplacements(replacements[i].getMap(), db);
-        }
-    } catch (error) {
-        logger.error(error);
+    const json = readConversionJsonFn();
+    const replacements = replacementsFactoryFn(json);
+    for (let i = 0; i < replacements.length; i++) {
+        await replacementsService.registerReplacements(replacements[i].getMap(), db);
     }
 }
 
@@ -93,14 +83,12 @@ async function registerSpecificReplacements(
  */
 async function registerReplacements(replacementsService, db) {
     await registerSpecificReplacements(
-        'ga/ap',
         readConversionJson_GWAP,
         replacementsFactory_GWAP,
         replacementsService,
         db
     );
     await registerSpecificReplacements(
-        'ga/va',
         readConversionJson_GWVA,
         replacementsFactory_GWVA,
         replacementsService,
