@@ -12,6 +12,4 @@ function setupCli() {
 async function main() {
     setupCli();
 }
-main()
-
-
+main();

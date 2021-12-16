@@ -2,17 +2,15 @@
 
 async function handler(argv) {
     let optionSelected = false;
+    const predefinedConversionsService = require('../service/predefinedConversionsService');
 
-    if(argv.e || arg['mini-eamporium']){
-        optionSelected = true
-        // TODO #46
-        // const db = require('./shared/db');
-        // const miniEmporiumConversions = require('./predefined-conversions/mini-emporium');
-        // miniEmporiumConversions.registerReplacements(replacementsService, db);
+    if (argv.e || argv['mini-eamporium']) {
+        optionSelected = true;
+        predefinedConversionsService.registerMiniEmporiumConversions();
     }
 
     if (!optionSelected) {
-        console.log(`Use <predef --help> to see available options.`);
+        console.log('Use <predef --help> to see available options.');
     }
 }
 

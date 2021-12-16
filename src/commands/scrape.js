@@ -9,7 +9,7 @@ async function handler(argv) {
         await catalogImportService.importGamesWorkshopPaintsCatalog();
     }
 
-    if (argv.v || argv['valejo']) {
+    if (argv.v || argv.valejo) {
         optionSelected = true;
         await catalogImportService.importVallejoAcrylicsPaintsCatalog();
     }
@@ -19,15 +19,14 @@ async function handler(argv) {
         await catalogImportService.importArmyPainterPaintsCatalog();
     }
 
-    if (argv.s || argv['scale75']) {
+    if (argv.s || argv.scale75) {
         optionSelected = true;
-        console.log('not implemented yet')
+        console.log('not implemented yet');
     }
 
-    if(!optionSelected) {
-        console.log(`Use <scrape --help> to see available options.`);
+    if (!optionSelected) {
+        console.log('Use <scrape --help> to see available options.');
     }
-
 }
 
 module.exports = {
