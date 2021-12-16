@@ -11,7 +11,7 @@ function readConversionJson(file) {
     try {
         const content = fse.readJsonSync(file);
         return content;
-    } catch () {
+    } catch (_) {
         return [];
     }
 }
