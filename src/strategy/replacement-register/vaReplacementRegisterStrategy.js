@@ -9,7 +9,7 @@ const replacementRegisterStrategy = require('./replacementRegisterStrategy');
 async function vaReplacementRegisterStrategy(replacements, db, logger) {
     const targetModelName = 'VallejoPaint';
     if (replacements.has(targetModelName)) {
-        logger.info('registering replacements with vaReplacementRegisterStrategy');
+        logger.log('registering replacements with vaReplacementRegisterStrategy');
         await replacementRegisterStrategy(targetModelName, replacements, db);
     }
 }
