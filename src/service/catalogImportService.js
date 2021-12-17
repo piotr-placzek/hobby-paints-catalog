@@ -35,6 +35,7 @@ async function importPaintsCatalog(name, resources, strategy, model) {
             logger.warn('can not save entity', i + 1, result[i].catalog_number, result[i].trade_name);
         }
     }
+    logger.info(`done`)
 
     return cantSave;
 }
