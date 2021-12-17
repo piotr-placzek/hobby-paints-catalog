@@ -12,6 +12,7 @@ async function registerMiniEmporiumConversions() {
     logger.info('registering predefined conversions by MiniEmporium');
     try {
         await predefinedConversionsByMiniEmporium.registerReplacements(replacementsService, db);
+        logger.info('done');
     } catch (error) {
         logger.error(error);
     }

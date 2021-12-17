@@ -14,7 +14,7 @@ async function scrapePaintsCatalog(src, strategy) {
     const result = [];
     for (let i = 0; i < src.length; i++) {
         const url = src[i];
-        logger.info(`scraping with ${strategy.name} > ${url}`);
+        logger.log(`scraping with ${strategy.name} > ${url}`);
         const html = await getHtmlSource(url);
         const data = await scrape(html, strategy);
         result.push(...data);

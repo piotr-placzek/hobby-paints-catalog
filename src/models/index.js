@@ -9,31 +9,34 @@ const sharedConfig = require('../shared/config');
 const LoggerService = require('../service/loggerService');
 const logger = new LoggerService('database-orm');
 
-logger.info('database config:', dbConfig[sharedConfig.NODE_ENV]);
+logger.log('database config:', dbConfig[sharedConfig.NODE_ENV]);
 const sequelize = new Sequelize(dbConfig[sharedConfig.NODE_ENV]);
 
 const basename = path.basename(__filename);
 const db = {};
 
-fs
-  .readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
-  .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    logger.info(model.name, 'model initialized');
-    db[model.name] = model;
-  });
+try {
+    fs.readdirSync(__dirname)
+        .filter(file => file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js')
+        .forEach(file => {
+            const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+            logger.log(model.name, 'model initialized');
+            db[model.name] = model;
+        });
+} catch (error) {
+    logger.error('can not initialize database models');
+}
 
-logger.info('creating associations')
+logger.log('creating associations');
 Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
+    if (db[modelName].associate) {
+        db[modelName].associate(db);
+    }
 });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.models = Object.keys(db).filter(k => k.toLocaleLowerCase() !== 'sequelize');
 
-logger.info('database ready');
+logger.log('database ready');
 module.exports = db;
