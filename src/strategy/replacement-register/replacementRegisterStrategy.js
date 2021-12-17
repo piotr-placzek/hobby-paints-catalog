@@ -71,7 +71,6 @@ async function getReplacementsColumnsWithValues(replacementsMap, db) {
     for (const [modelName, replacementsColumnWithValues] of replacementsMap) {
         const { columnName, values } = replacementsColumnWithValues;
         const valuesArray = Array.from(values);
-        //! values is Set  iterate here over Set!
         const valuesCount = valuesArray.length;
         for (let i = 0; i < valuesCount; i++) {
             const replacemetName = valuesArray[i];

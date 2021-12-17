@@ -9,7 +9,7 @@ const replacementRegisterStrategy = require('./replacementRegisterStrategy');
 async function gwReplacementRegisterStrategy(replacements, db, logger) {
     const targetModelName = 'GameWorkshopPaint';
     if (replacements.has(targetModelName)) {
-        logger.info('registering replacements with gwReplacementRegisterStrategy');
+        logger.log('registering replacements with gwReplacementRegisterStrategy');
         await replacementRegisterStrategy(targetModelName, replacements, db);
     }
 }
