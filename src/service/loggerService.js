@@ -10,12 +10,17 @@ const separator = config.LOGGER_SEPARATOR;
  */
 function tier() {
     switch (config.NODE_ENV.toUpperCase()) {
-        case 'PRODUCTION': return 0;
-        case 'DEVELOPMENT': return 1;
-        case 'DEBUG': return 2;
-        case 'TEST': return 3;
-        default: return -1;
-    };
+        case 'PRODUCTION':
+            return 0;
+        case 'DEVELOPMENT':
+            return 1;
+        case 'DEBUG':
+            return 2;
+        case 'TEST':
+            return 3;
+        default:
+            return -1;
+    }
 }
 
 /**
@@ -24,12 +29,18 @@ function tier() {
  */
 function minTier(lvl) {
     switch (lvl.toUpperCase()) {
-        case 'INFO': return 0;
-        case 'WARN': return 0;
-        case 'ERROR': return 0;
-        case 'LOG': return 1;
-        case 'DEBUG': return config.DEBUG ? tier() : 2;
-        default: return -1;
+        case 'INFO':
+            return 0;
+        case 'WARN':
+            return 0;
+        case 'ERROR':
+            return 0;
+        case 'LOG':
+            return 1;
+        case 'DEBUG':
+            return config.DEBUG ? tier() : 2;
+        default:
+            return -1;
     }
 }
 
@@ -54,13 +65,9 @@ class LoggerService {
      * @access public
      */
     log() {
-        if(tier() < minTier('log')) return;
+        if (tier() < minTier('log')) return;
         this.logger.log(
-            `[${this._date()}]`.yellow +
-            '[log]' +
-            `[${this.name}]` +
-            separator +
-            this._buildMessageString(arguments)
+            `[${this._date()}]`.yellow + '[log]' + `[${this.name}]` + separator + this._buildMessageString(arguments)
         );
     }
 
@@ -70,13 +77,13 @@ class LoggerService {
      * @access public
      */
     info() {
-        if(tier() < minTier('info')) return;
+        if (tier() < minTier('info')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
-            '[info]'.blue +
-            `[${this.name}]` +
-            separator +
-            this._buildMessageString(arguments)
+                '[info]'.blue +
+                `[${this.name}]` +
+                separator +
+                this._buildMessageString(arguments)
         );
     }
 
@@ -85,15 +92,14 @@ class LoggerService {
      * @memberof LoggerService
      * @access public
      */
-     warn() {
-        if(tier() < minTier('warn')) return;
+    warn() {
+        if (tier() < minTier('warn')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
-            '[warning]'.orange +
-            `[${this.name}]` +
-            separator +
-            this._buildMessageString(arguments)
-                .red
+                '[warning]'.orange +
+                `[${this.name}]` +
+                separator +
+                this._buildMessageString(arguments).red
         );
     }
 
@@ -103,14 +109,13 @@ class LoggerService {
      * @access public
      */
     error() {
-        if(tier() < minTier('error')) return;
+        if (tier() < minTier('error')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
-            '[error]'.red +
-            `[${this.name}]` +
-            separator +
-            this._buildMessageString(arguments)
-                .red
+                '[error]'.red +
+                `[${this.name}]` +
+                separator +
+                this._buildMessageString(arguments).red
         );
     }
 
@@ -120,14 +125,13 @@ class LoggerService {
      * @access public
      */
     debug() {
-        if(tier() < minTier('debug')) return;
+        if (tier() < minTier('debug')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
-            '[debug]'.green +
-            `[${this.name}]` +
-            separator +
-            this._buildMessageString(arguments)
-                .italic
+                '[debug]'.green +
+                `[${this.name}]` +
+                separator +
+                this._buildMessageString(arguments).italic
         );
     }
 
@@ -147,13 +151,13 @@ class LoggerService {
      * @returns {string} msg
      */
     _buildMessageString(args) {
-        return Object.values(args).map(
-            (arg) => {
+        return Object.values(args)
+            .map(arg => {
                 if (typeof arg === 'object') return JSON.stringify(arg);
                 else return arg;
-            }
-        ).join(' ');
+            })
+            .join(' ');
     }
-};
+}
 
 module.exports = LoggerService;
