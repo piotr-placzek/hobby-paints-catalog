@@ -16,5 +16,5 @@ async function handler(argv) {
 module.exports = {
     handler,
     command: 'license',
-    desc: 'print short license CC-BY-SA-NC',
+    desc: 'print short license CC-BY-SA-NC'
 };

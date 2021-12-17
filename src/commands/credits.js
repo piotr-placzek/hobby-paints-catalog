@@ -16,5 +16,5 @@ async function handler(argv) {
 module.exports = {
     handler,
     command: 'credits',
-    desc: 'print credentials',
+    desc: 'print credentials'
 };
