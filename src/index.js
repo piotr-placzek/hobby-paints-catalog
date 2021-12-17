@@ -1,30 +1,15 @@
 'use strict';
 
-const db = require('./shared/db');
-const catalogImportService = require('./service/catalogImportService');
-const replacementsService = require('./service/replacementsService');
-const miniEmporiumConversions = require('./predefined-conversions/mini-emporium');
-
-async function main() {
-    const scrapeGwFlag = process.argv.indexOf('--scrape-gw') >= 0;
-    if (scrapeGwFlag) {
-        await catalogImportService.importGamesWorkshopPaintsCatalog();
-    }
-
-    const scrapeVaFlag = process.argv.indexOf('--scrape-va') >= 0;
-    if (scrapeVaFlag) {
-        await catalogImportService.importVallejoAcrylicsPaintsCatalog();
-    }
-
-    const scrapeApFlag = process.argv.indexOf('--scrape-ap') >= 0;
-    if (scrapeApFlag) {
-        await catalogImportService.importArmyPainterPaintsCatalog();
-    }
-
-    const predefConvMeFlag = process.argv.indexOf('--predefined-conversions-miniemporium') >= 0;
-    if (predefConvMeFlag) {
-        miniEmporiumConversions.registerReplacements(replacementsService, db);
-    }
+function setupCli() {
+    return require('yargs/yargs')(process.argv.slice(2))
+        .usage('Usage: $0 <command> [options]')
+        .commandDir('./commands')
+        .help('h')
+        .alias('h', 'help')
+        .epilog('Piotr Płaczek <piotr@pplaczek> 2021 MIT License').argv;
 }
 
+async function main() {
+    setupCli();
+}
 main();
