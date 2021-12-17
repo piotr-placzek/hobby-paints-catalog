@@ -18,7 +18,7 @@ const logger = new LoggerService('catalog-import-service');
  */
 async function importPaintsCatalog(name, resources, strategy, model) {
     model.destroy({ truncate: true });
-    logger.info(`${name} paints table truncated`);
+    logger.log(`${name} paints table truncated`);
 
     logger.info(`importing ${name} paints catalog`);
     logger.info(`${name} sources count: ${resources.length}`);
@@ -32,7 +32,7 @@ async function importPaintsCatalog(name, resources, strategy, model) {
             await result[i].save();
         } catch (e) {
             cantSave.push(result[i]);
-            logger.error('can not save entity', i + 1, result[i].catalog_number, result[i].trade_name);
+            logger.warn('can not save entity', i + 1, result[i].catalog_number, result[i].trade_name);
         }
     }
 
