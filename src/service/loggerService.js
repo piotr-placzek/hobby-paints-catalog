@@ -54,7 +54,7 @@ class LoggerService {
      * @access public
      */
     log() {
-        if(tier() < minTier(arguments.callee.name)) return;
+        if(tier() < minTier('log')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[log]' +
@@ -70,7 +70,7 @@ class LoggerService {
      * @access public
      */
     info() {
-        if(tier() < minTier(arguments.callee.name)) return;
+        if(tier() < minTier('info')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[info]'.blue +
@@ -86,7 +86,7 @@ class LoggerService {
      * @access public
      */
      warn() {
-        if(tier() < minTier(arguments.callee.name)) return;
+        if(tier() < minTier('warn')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[warning]'.orange +
@@ -103,7 +103,7 @@ class LoggerService {
      * @access public
      */
     error() {
-        if(tier() < minTier(arguments.callee.name)) return;
+        if(tier() < minTier('error')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[error]'.red +
@@ -120,7 +120,7 @@ class LoggerService {
      * @access public
      */
     debug() {
-        if(tier() < minTier(arguments.callee.name)) return;
+        if(tier() < minTier('debug')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
             '[debug]'.green +
