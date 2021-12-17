@@ -28,7 +28,7 @@ function minTier(lvl) {
         case 'WARN': return 0;
         case 'ERROR': return 0;
         case 'LOG': return 1;
-        case 'DEBUG': return 2;
+        case 'DEBUG': return config.DEBUG ? tier() : 2;
         default: return -1;
     }
 }
