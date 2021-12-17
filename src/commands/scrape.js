@@ -2,7 +2,7 @@
 
 async function handler(argv) {
     let optionSelected = false;
-    const catalogImportService = require('../service/scrapingService');
+    const catalogImportService = require('../service/catalogImportService');
 
     if (argv.g || argv['games-workshop']) {
         optionSelected = true;
