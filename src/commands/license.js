@@ -6,7 +6,7 @@ async function handler(argv) {
     The application is intended for hobby purposes only
     and is based on the terms of the Creative Commons license
 
-            CC-BY-SA-NC
+        CC BY-NC-SA
 
     Please read LICENSE.md file.
 
@@ -16,5 +16,5 @@ async function handler(argv) {
 module.exports = {
     handler,
     command: 'license',
-    desc: 'print short license CC-BY-SA-NC'
+    desc: 'print short license CC BY-NC-SA'
 };
