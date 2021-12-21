@@ -1,7 +1,7 @@
 'use strict';
 
 async function handler(argv) {
-    const name = argv.n ? argv.n : argv.name;
+    const name = (argv.n ? argv.n : argv.name).toLowerCase().trim();
     if (!name) {
         console.log('Use <find-by-name --help> to see available options.');
         return;
