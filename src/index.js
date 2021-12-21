@@ -1,7 +1,15 @@
 'use strict';
 
-function main() {
-    console.log('main');
+function setupCli() {
+    return require('yargs/yargs')(process.argv.slice(2))
+        .usage('Usage: $0 <command> [options]')
+        .commandDir('./commands')
+        .help('h')
+        .alias('h', 'help')
+        .epilog('Piotr Płaczek <piotr@pplaczek> 2021 MIT License').argv;
 }
 
-module.exports = main;
+async function main() {
+    setupCli();
+}
+main();
