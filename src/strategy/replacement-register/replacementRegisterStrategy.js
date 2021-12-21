@@ -93,6 +93,7 @@ async function getReplacementsColumnsWithValues(replacementsMap, db) {
  * @returns {*} db model (sigle row)
  */
 async function getRecord(modelName, tradeName, db) {
+    tradeName = tradeName.toLowerCase().trim();
     const record = await db[modelName].findOne({ where: { trade_name: tradeName } });
     if (record === null) {
         throw new Error(`Can not find ${modelName} with name ${tradeName}`);
