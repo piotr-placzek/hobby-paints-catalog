@@ -66,9 +66,9 @@ function productFactory(imageUrl) {
     const product = splitFileName(fileName);
 
     return db.GameWorkshopPaint.build({
-        catalog_number: product.catalogNumber,
-        trade_name: product.tradeName,
-        series: product.series,
+        catalog_number: product.catalogNumber.toUpperCase().trim(),
+        trade_name: product.tradeName.toLowerCase().trim(),
+        series: product.series.toLowerCase().trim(),
         image_url: imageUrl
     });
 }

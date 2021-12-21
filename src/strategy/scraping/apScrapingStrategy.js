@@ -57,9 +57,9 @@ function productFactory(imageUrl, tradeName) {
     const series = extractSeries(imageUrl);
 
     return db.ArmyPainterPaint.build({
-        catalog_number: catalogNumber,
-        trade_name: tradeName,
-        series,
+        catalog_number: catalogNumber.toUpperCase().trim(),
+        trade_name: tradeName.toLowerCase().trim(),
+        series: series.toLowerCase().trim(),
         image_url: imageUrl
     });
 }

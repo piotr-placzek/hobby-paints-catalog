@@ -9,7 +9,7 @@ describe('Scraping strategies', () => {
     it('Games Workshop', async () => {
         const expected = {
             catalog_number: '99189950001',
-            trade_name: 'Averland Sunset',
+            trade_name: 'averland sunset',
             series: 'base',
             image_url: 'https://www.games-workshop.com/resources/catalog/product/600x620/99189950001_baseAverlandSunset.svg'
         };
@@ -29,7 +29,7 @@ describe('Scraping strategies', () => {
     it('Vallejo Acrylics', async () => {
         const expected = {
             catalog_number: '70.951',
-            trade_name: 'White',
+            trade_name: 'white',
             series: 'model color',
             image_url: 'https://acrylicosvallejo.com/wp-content/uploads/2018/06/model-color-vallejo-white-70951-300x300.jpg'
         };
@@ -81,8 +81,8 @@ describe('Scraping strategies', () => {
     if('Army Painter', async () => {
         const expected = {
             catalog_number: 'WP1101',
-            trade_name: 'Matt Black',
-            series: 'Warpaints',
+            trade_name: 'matt black',
+            series: 'warpaints',
             image_url: 'https://admin.thearmypainter.com/files/products/Warpaints Single 2020/thumbs/WP1101-Matt Black-1 copy.jpg'
         };
         const htmlContainer =
