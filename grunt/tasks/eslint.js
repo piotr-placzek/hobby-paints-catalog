@@ -1,6 +1,6 @@
 const path = require('path');
 
-function eslintTask(rootDirectory) {
+function uglifyTask(rootDirectory) {
     return {
         options: {
             overrideConfigFile: path.join(rootDirectory, 'grunt/config', 'eslint.json'),
@@ -14,4 +14,4 @@ function eslintTask(rootDirectory) {
     };
 }
 
-module.exports = eslintTask;
+module.exports = uglifyTask;

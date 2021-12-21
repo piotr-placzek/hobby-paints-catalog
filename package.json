@@ -8,6 +8,7 @@
     "start": "node src/index.js",
     "jest": "NODE_ENV=test TZ=UTC jest",
     "test": "NODE_ENV=test grunt test",
+    "uglify": "grunt uglify",
     "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
     "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
     "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
