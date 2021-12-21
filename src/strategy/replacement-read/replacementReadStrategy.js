@@ -2,7 +2,7 @@
 
 async function replacementReadStrategy(model, primaryKeys, logger) {
     const result = [];
-    for (const pk of primaryKeys ){
+    for (const pk of primaryKeys) {
         try {
             const product = await model.findByPk(pk);
             if (product) {
