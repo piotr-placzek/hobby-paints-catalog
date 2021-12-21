@@ -18,9 +18,9 @@ function vaScrapingStrategy(cheerio) {
             const series = extractSeries(productUrl);
 
             products.push(db.VallejoPaint.build({
-                catalog_number: catalogNumber,
-                trade_name: tradeName,
-                series: series,
+                catalog_number: catalogNumber.toUpperCase().trim(),
+                trade_name: tradeName.toLowerCase().trim(),
+                series: series.toLowerCase().trim(),
                 image_url: imageUrl
             }));
         }
