@@ -3,8 +3,7 @@ const path = require('path');
 function eslintTask(rootDirectory) {
     return {
         options: {
-            overrideConfigFile: path.join(rootDirectory, 'grunt/config', 'eslint.json'),
-            ignorePath: path.join(rootDirectory, 'grunt/config', '.eslintignore')
+            overrideConfigFile: path.join(rootDirectory, 'grunt/config', 'eslint.json')
         },
         src: [
             path.join(rootDirectory, 'src'),

@@ -5,17 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "start": "NODE_ENV=production node src/index.js",
-    "jest": "NODE_ENV=test TZ=UTC jest",
-    "test": "NODE_ENV=test grunt test",
-    "uglify": "grunt uglify",
-    "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "scrape:all": "node src/index.js scrape -gva",
-    "scrape:gw": "node src/index.js scrape -g",
-    "scrape:va": "node src/index.js scrape -v",
-    "scrape:ap": "node src/index.js scrape -a"
+    "jest": "TZ=UTC jest",
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -41,18 +32,6 @@
     "grunt-run": "^0.8.1",
     "jest": "^27.3.1",
     "jit-grunt": "^0.10.0",
-    "path": "^0.12.7",
-    "sequelize-cli": "^6.3.0"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "cli-table": "^0.3.11",
-    "colors": "^1.4.0",
-    "dotenv": "^10.0.0",
-    "fs-extra": "^10.0.0",
-    "puppeteer": "^11.0.0",
-    "sequelize": "^6.12.0-alpha.1",
-    "sqlite3": "^5.0.2",
-    "yargs": "^17.3.0"
+    "path": "^0.12.7"
   }
 }
