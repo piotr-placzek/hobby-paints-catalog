@@ -23,6 +23,8 @@ with additional `--`.
 
 You can find available commands and options by using `-h` or `--help`.
 
+Remember to set environment variable `NODE_ENV` to `production`.
+
 #### Example of use
 ```
 $ npm start -- find-by-name -n="flat yellow"
