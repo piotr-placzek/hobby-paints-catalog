@@ -2,6 +2,7 @@
 
 const registerStrategies = require('../strategy/replacement-register');
 const readStrategies = require('../strategy/replacement-read');
+const Replacements = require('../contract/replacements');
 const LoggerService = require('../service/loggerService');
 
 const logger = new LoggerService('replacements-service');
@@ -20,19 +21,32 @@ async function registerReplacements(replacements, db) {
 }
 
 /**
- * @param {Model} baseProduct
+ * @param {Model} product
  * @param {*} db
  * @returns {Model[]}
  */
-async function getReplacements(baseProduct, db) {
+async function getReplacements(product, db) {
     const result = [];
-    for (const strategy of Object.values(readStrategies)) {
-        try {
-            await strategy(baseProduct, db, logger);
-        } catch (error) {
-            logger.error(error.message);
+
+    const replacements = new Replacements(
+        product.gw_replacements,
+        product.va_replacements,
+        product.ap_replacements,
+        product.sc_replacements
+    );
+
+    if (replacements.isValid()) {
+        const replacementsMap = replacements.getMap();
+        for (const strategy of Object.values(readStrategies)) {
+            try {
+                const data = await strategy(replacementsMap, db, logger);
+                result.push(...data);
+            } catch (error) {
+                logger.error(error.message);
+            }
         }
     }
+
     return result;
 }
 

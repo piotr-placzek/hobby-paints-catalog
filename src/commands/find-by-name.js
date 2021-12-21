@@ -15,17 +15,9 @@ async function handler(argv) {
     const LoggerService = require('../service/loggerService');
     const logger = new LoggerService('results');
 
-    let product = null;
-
-    if (argv.p || argv.product) {
-        product = await searchingService.findByName(name, db);
-        printingService.printProductDetails(product, logger);
-    }
-
-    if (argv.r || argv.replacements) {
-        const replacements = await replacementsService.getReplacements(product, db);
-        printingService.printProductReplacements(replacements, logger);
-    }
+    const product = await searchingService.findByName(name, db);
+    const replacements = await replacementsService.getReplacements(product, db);
+    printingService.printProductReplacements([product, ...replacements], logger);
 }
 
 module.exports = {
@@ -33,16 +25,6 @@ module.exports = {
     command: 'find-by-name',
     desc: 'find product by given name',
     builder: {
-        p: {
-            alias: 'product',
-            describe: 'find product details',
-            type: 'boolean'
-        },
-        r: {
-            alias: 'replacements',
-            describe: 'find product replacements',
-            type: 'boolean'
-        },
         n: {
             alias: 'name',
             describe: 'product trade name',
