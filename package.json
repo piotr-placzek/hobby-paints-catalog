@@ -5,16 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "start": "node src/index.js",
+    "start": "NODE_ENV=production node src/index.js",
     "jest": "NODE_ENV=test TZ=UTC jest",
     "test": "NODE_ENV=test grunt test",
+    "uglify": "grunt uglify",
     "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
     "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
     "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "scrape:all": "node src/index.js --scrape-gw --scrape-va --scrape-ap",
-    "scrape:gw": "node src/index.js --scrape-gw",
-    "scrape:va": "node src/index.js --scrape-va",
-    "scrape:ap": "node src/index.js --scrape-ap"
+    "scrape:all": "node src/index.js scrape -gva",
+    "scrape:gw": "node src/index.js scrape -g",
+    "scrape:va": "node src/index.js scrape -v",
+    "scrape:ap": "node src/index.js scrape -a"
   },
   "repository": {
     "type": "git",
