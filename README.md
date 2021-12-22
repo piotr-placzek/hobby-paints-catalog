@@ -27,11 +27,7 @@ Remember to set environment variable `NODE_ENV` to `production`.
 
 #### Example of use
 ```
-$ npm start -- find-by-name -n="flat yellow"
-
-> hobby-paints-catalog@1.0.0 start
-> NODE_ENV=production node src/index.js "find-by-name" "-n=flat yellow"
-
+$ npm start --silent -- find-by-name -n="flat yellow"
 [Tue, 21 Dec 2021 18:25:38 GMT][info][searching-service] - Searching for "flat yellow"
 [Tue, 21 Dec 2021 18:25:39 GMT][info][searching-service] - Found in VallejoPaint table
 [Tue, 21 Dec 2021 18:25:39 GMT][info][results] -
