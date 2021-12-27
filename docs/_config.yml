@@ -1,1 +1,14 @@
 theme: jekyll-theme-architect
+title: Hobby Paints Catalog
+tagline: HPC - Your catalog of modeling paint substitutes
+languages: ["pl","en"]
+preferences:
+  - type: dropdown
+    name: language
+    label: Language
+    description: Select your language
+    options:
+    - label: English
+      value: en
+    - label: Polski
+      value: pl
