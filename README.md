@@ -1,6 +1,10 @@
 # hobby-paints-catalog
 The application will allow you to manage your paints and search for substitutes.
 
+## Useful links
+- [Project's webpage](https://piotr-placzek.github.io/hobby-paints-catalog-page/)
+- [Project's Agile Board](https://github.com/piotr-placzek/hobby-paints-catalog/projects/1)
+
 # Requirements
 | Node.js | v16.10.0 |
 |-|-|
