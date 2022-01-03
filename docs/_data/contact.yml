@@ -3,9 +3,15 @@
 -
   type: github
   icon: 'fab fa-github'
+  url: 'https://github.com/piotr-placzek/hobby-paints-catalog'
+-
+  type: linkedin
+  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.linkedin.com/in/piotrplaczek'                  # Fill with your Linkedin homepage
 -
   type: donation
   icon: fas fa-hand-holding-usd
+  url: 'https://patronite.pl/'
 -
   type: rss
   icon: 'fas fa-rss'
@@ -24,10 +30,6 @@
 #   type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your mastodon account page
-# -
-#   type: linkedin
-#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
