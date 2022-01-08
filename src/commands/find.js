@@ -3,17 +3,16 @@
 async function find(db, name, number) {
     const searchingService = require('../service/searchingService');
 
-    if(name) {
+    if (name) {
         return searchingService.findByName(name.toLowerCase().trim(), db);
-    }
-    else if(number) {
+    } else if (number) {
         return searchingService.findByNumber(number.toUpperCase().trim(), db);
     }
 }
 
 async function handler(argv) {
-    const name = (argv.n ? argv.n : argv.name);
-    const number = (argv.i ? argv.i : argv.number);
+    const name = argv.n ? argv.n : argv.name;
+    const number = argv.i ? argv.i : argv.number;
     if (!name && !number) {
         console.log('Use <find --help> to see available options.');
         return;
@@ -40,12 +39,12 @@ module.exports = {
         n: {
             alias: 'name',
             describe: 'product trade name',
-            type: 'string',
+            type: 'string'
         },
         i: {
             alias: 'number',
             describe: 'product catalog number',
-            type: 'string',
+            type: 'string'
         }
     }
 };
