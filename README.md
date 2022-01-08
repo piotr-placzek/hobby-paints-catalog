@@ -4,6 +4,7 @@ The application will allow you to manage your paints and search for substitutes.
 ## Useful links
 - [Project's webpage](https://piotr-placzek.github.io/hobby-paints-catalog-page/)
 - [Project's Agile Board](https://github.com/piotr-placzek/hobby-paints-catalog/projects/1)
+- [Project progress by milestones](https://github.com/piotr-placzek/hobby-paints-catalog/milestones)
 - [Buy me a coffee](https://buycoffee.to/poohpatine)
 
 # Requirements
