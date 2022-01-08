@@ -17,7 +17,7 @@ function vaScrapingStrategy(cheerio) {
             const productUrl = item('.product-description a').attr('href');
             const series = extractSeries(productUrl);
 
-            products.push(db.VallejoPaint.findOrBuild({
+            products.push(db.VallejoPaint.build({
                 catalog_number: catalogNumber.toUpperCase().trim(),
                 trade_name: tradeName.toLowerCase().trim(),
                 series: series.toLowerCase().trim(),
