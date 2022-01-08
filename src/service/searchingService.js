@@ -5,6 +5,7 @@ const LoggerService = require('./loggerService');
 const logger = new LoggerService('searching-service');
 
 async function find(where, db) {
+    logger.info('Searching for', where.where);
     let result = null;
     let table = null;
     for (const modelName of Object.values(db.models)) {
@@ -25,12 +26,10 @@ async function find(where, db) {
 }
 
 async function findByName(tradeName, db) {
-    logger.info(`Searching for "${tradeName}"`);
     return find({ where: { trade_name: tradeName } }, db);
 }
 
 async function findByNumber(catalogNumber, db) {
-    logger.info(`Searching for "${catalogNumber}"`);
     return find({ where: { catalog_number: catalogNumber } }, db);
 }
 
