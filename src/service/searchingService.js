@@ -29,6 +29,12 @@ async function findByName(tradeName, db) {
     return find({ where: { trade_name: tradeName } }, db);
 }
 
+async function findByNumber(catalogNumber, db) {
+    logger.info(`Searching for "${catalogNumber}"`);
+    return find({ where: { catalog_number: catalogNumber } }, db);
+}
+
 module.exports = {
-    findByName
+    findByName,
+    findByNumber
 };
