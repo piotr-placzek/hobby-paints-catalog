@@ -65,7 +65,7 @@ function productFactory(imageUrl) {
     const fileName = getFileName(imageUrl);
     const product = splitFileName(fileName);
 
-    return db.GameWorkshopPaint.build({
+    return db.GameWorkshopPaint.findOrBuild({
         catalog_number: product.catalogNumber.toUpperCase().trim(),
         trade_name: product.tradeName.toLowerCase().trim(),
         series: product.series.toLowerCase().trim(),

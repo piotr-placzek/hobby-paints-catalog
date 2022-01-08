@@ -17,7 +17,7 @@ const logger = new LoggerService('catalog-import-service');
  * @returns {Model[]} entities that could not be saved in the database
  */
 async function importPaintsCatalog(name, resources, strategy, model) {
-    model.destroy({ truncate: true });
+    // model.destroy({ truncate: true });
     logger.log(`${name} paints table truncated`);
 
     logger.info(`importing ${name} paints catalog`);

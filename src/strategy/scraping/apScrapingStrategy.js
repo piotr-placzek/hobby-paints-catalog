@@ -56,7 +56,7 @@ function productFactory(imageUrl, tradeName) {
     const catalogNumber = extractCatalogNumber(fileName);
     const series = extractSeries(imageUrl);
 
-    return db.ArmyPainterPaint.build({
+    return db.ArmyPainterPaint.findOrBuild({
         catalog_number: catalogNumber.toUpperCase().trim(),
         trade_name: tradeName.toLowerCase().trim(),
         series: series.toLowerCase().trim(),
