@@ -33,7 +33,7 @@ async function handler(argv) {
 
 module.exports = {
     handler,
-    command: 'find',
+    command: 'find [options]',
     desc: 'find product by given value',
     builder: {
         n: {
