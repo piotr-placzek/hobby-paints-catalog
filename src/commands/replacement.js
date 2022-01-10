@@ -37,7 +37,7 @@ async function handler(argv) {
 
 module.exports = {
     handler,
-    command: 'replacement',
+    command: 'replacement [options]',
     desc: 'manage replacements in database',
     builder: {
         i: {
