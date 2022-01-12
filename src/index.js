@@ -6,7 +6,7 @@ function setupCli() {
         .commandDir('./commands')
         .help('h')
         .alias('h', 'help')
-        .epilog('Piotr Płaczek <piotr@pplaczek> 2021 MIT License').argv;
+        .epilog('Piotr Płaczek <piotr@pplaczek> 2021 CC BY NC SA 4.0 License').argv;
 }
 
 async function main() {
