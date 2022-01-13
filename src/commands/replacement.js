@@ -4,7 +4,7 @@ function printUseHelpMsg() {
     console.log('Use <replacement --help> to see available options.');
 }
 
-async function insert(argv) {
+function getReplacements(argv) {
     const Replacements = require('../contract/replacements');
     const gw = argv.g ? argv.g : argv['games-workshop'];
     const va = argv.v ? argv.v : argv.vallejo;
@@ -18,6 +18,12 @@ async function insert(argv) {
         sc ? new Set(sc) : undefined
     );
 
+    return replacements;
+}
+
+async function insert(argv) {
+    const replacements = getReplacements(argv);
+
     if (replacements.isValid()) {
         const replacementsService = require('./replacementsService');
         const db = require('../shared/db');
@@ -27,9 +33,23 @@ async function insert(argv) {
     }
 }
 
+async function remove(argv) {
+    const replacements = getReplacements(argv);
+
+    if (replacements.isValid()) {
+        const replacementsService = require('./replacementsService');
+        const db = require('../shared/db');
+        replacementsService.unregisterReplacements(replacements, db);
+    } else {
+        printUseHelpMsg();
+    }
+}
+
 async function handler(argv) {
     if (argv.i || argv.insert) {
         insert(argv);
+    } else if (argv.d || argv.remove) {
+        remove(argv);
     } else {
         printUseHelpMsg();
     }
@@ -43,6 +63,10 @@ module.exports = {
         i: {
             alias: 'insert',
             describe: 'Register new replacements'
+        },
+        d: {
+            alias: 'remove',
+            describe: 'Unregister existing replacements'
         },
         g: {
             alias: 'games-workshop',
