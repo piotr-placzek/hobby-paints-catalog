@@ -5,7 +5,7 @@
  * @param {*} db
  * @returns {Object} based at db structure. assign array of primary keys to replacments column name
  */
- async function getReplacementsColumnsWithValues(replacementsMap, db) {
+async function getReplacementsColumnsWithValues(replacementsMap, db) {
     const result = {};
     for (const [modelName, replacementsColumnWithValues] of replacementsMap) {
         const { columnName, values } = replacementsColumnWithValues;

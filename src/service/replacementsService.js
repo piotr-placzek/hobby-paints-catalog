@@ -24,7 +24,7 @@ async function registerReplacements(replacements, db) {
 /**
  * @param {Replacements} replacements valid replacements object
  */
- async function unregisterReplacements(replacements, db) {
+async function unregisterReplacements(replacements, db) {
     for (const strategy of Object.values(unregisterStrategies)) {
         try {
             await strategy(replacements, db, logger);
