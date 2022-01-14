@@ -370,79 +370,139 @@
         "ap": "Toxic Boils"
     },
     {
-        "gw": "",
+        "gw": "Ushtabi Bone",
+        "va": "Bone White",
+        "ap": "Skeleton Bone"
+    },
+    {
+        "gw": "Pallid Wych Flesh",
         "va": "",
-        "ap": ""
+        "ap": "Mummy Robes"
+    },
+    {
+        "gw": "Screaming Skull",
+        "va": "Bone White",
+        "ap": "Drake Tooth"
+    },
+    {
+        "gw": "Kreig Khaki",
+        "va": "Dead Flesh",
+        "ap": "Necrotic Flesh"
+    },
+    {
+        "gw": "Nurgling Green",
+        "va": "Dead Flesh",
+        "ap": "Combat Fatigue"
+    },
+    {
+        "gw": "Death Guard Green",
+        "va": "Yellow Olive",
+        "ap": "Venom Wyrm"
+    },
+    {
+        "gw": "Stormvermin Fur",
+        "va": "",
+        "ap": "Filthy Cape"
+    },
+    {
+        "gw": "Castellan Green",
+        "va": "Cayman Green",
+        "ap": "Crypt Wraith"
+    },
+    {
+        "gw": "Deathworld Forest",
+        "va": "Camo Green",
+        "ap": "Elf Green"
+    },
+    {
+        "gw": "Elysian Green",
+        "va": "Camo Green",
+        "ap": "Commando Green"
+    },
+    {
+        "gw": "Ogryn Camo",
+        "va": "",
+        "ap": "Witch Brew"
+    },
+    {
+        "gw": "Kreig Khaki",
+        "va": "",
+        "ap": "Scaly Hide"
+    },
+    {
+        "gw": "Warboss Green",
+        "va": "Goblin Green",
+        "ap": "Goblin Green"
+    },
+    {
+        "gw": "Gauss Blaster Green",
+        "va": "",
+        "ap": "Kraken Skin"
+    },
+    {
+        "gw": "Warpstone Glow",
+        "va": "Sick Green",
+        "ap": "Greenskin"
+    },
+    {
+        "gw": "Caliban Green",
+        "va": "Sick Green",
+        "ap": "Angel Green"
+    },
+    {
+        "gw": "Skarsnik Green",
+        "va": "Scorpy Green",
+        "ap": "Mouldy Clothes"
+    },
+    {
+        "gw": "Straken Green",
+        "va": "Yellow Olive",
+        "ap": "Army Green"
+    },
+    {
+        "gw": "Moot Green",
+        "va": "Scorpy Green",
+        "ap": "Snake Scales"
+    },
+    {
+        "gw": "Niblet Green",
+        "va": "Livery Green",
+        "ap": "JUngle Green"
     },
     {
         "gw": "",
-        "va": "",
-        "ap": ""
+        "va": "Fluorescent Yellow",
+        "ap": "Poisonous Cloud"
     },
     {
         "gw": "",
-        "va": "",
-        "ap": ""
+        "va": "Fluorescent Green",
+        "ap": "Poisonous Cloud"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Ryza Rust",
+        "va": "Rust",
+        "ap": "Dry Rust"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Ryza Rust",
+        "va": "Dry Rust",
+        "ap": "Dry Rust"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Blood For The Blood God",
+        "va": "Fresh Blood",
+        "ap": "Glistening Blood"
     },
     {
-        "gw": "",
+        "gw": "Typhus Corrosion",
         "va": "",
-        "ap": ""
+        "ap": "Wet Mud"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
-    },
-    {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Nurgles Rot",
+        "va": "Vomit",
+        "ap": "Disgusting Slime"
     },
     {
         "gw": "",
