@@ -19,9 +19,9 @@ const Replacements = require('../../contract/replacements');
 function replacementsFactory(data) {
     const replacements = [];
     data.forEach(set => {
-        const gwSet = set.gw ? new Set(set.gw) : undefined;
-        const vaSet = set.va ? new Set(set.va) : undefined;
-        const apSet = new Set(set.ap);
+        const gwSet = set.gw ? new Set([set.gw]) : undefined;
+        const vaSet = set.va ? new Set([set.va]) : undefined;
+        const apSet = new Set([set.ap]);
         replacements.push(
             new Replacements(gwSet, vaSet, apSet)
         );

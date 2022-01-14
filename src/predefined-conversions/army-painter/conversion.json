@@ -28,7 +28,7 @@
         "ap": "Deep Blue"
     },
     {
-        "gw": "Maccage Blue",
+        "gw": "Macragge Blue",
         "ap": "Griffon Blue"
     },
     {
@@ -51,7 +51,7 @@
         "ap": "Ice Storm"
     },
     {
-        "gw": "Lother Blue",
+        "gw": "Lothern Blue",
         "ap": "Troglodyte Blue"
     },
     {
@@ -86,7 +86,7 @@
     },
     {
         "gw": "Eshin Grey",
-        "ap": "Necromancer Cloak"
+        "ap": "Necromance Cloak"
     },
     {
         "gw": "Dawnstone",
@@ -94,7 +94,7 @@
         "ap": "Dungeon Grey"
     },
     {
-        "gw": "Warpfield Grey",
+        "gw": "Warpfiend Grey",
         "ap": "Field Grey"
     },
     {
@@ -104,7 +104,7 @@
     },
     {
         "gw": "Stormvermin Fur",
-        "va": "Heavy Chercoal",
+        "va": "Heavy Charcoal",
         "ap": "Castle Grey"
     },
     {
@@ -122,7 +122,7 @@
         "ap": "Monster Brown"
     },
     {
-        "gw": "Steel Legion Brown",
+        "gw": "Steel Legion Drab",
         "va": "Earth",
         "ap": "Leather Brown"
     },
@@ -132,7 +132,7 @@
         "ap": "Dirt Spatter"
     },
     {
-        "gw": "Dryard Bark",
+        "gw": "Dryad Bark",
         "va": "Charred Brown",
         "ap": "Oak Brown"
     },
@@ -173,7 +173,7 @@
     {
         "gw": "Yriel Yellow",
         "va": "Gold Yellow",
-        "ap": "Phoenix Flame"
+        "ap": "Phoenix Flames"
     },
     {
         "gw": "Jokaero Orange",
@@ -181,7 +181,7 @@
         "ap": "Fire Lizard"
     },
     {
-        "gw": "Trollslayer Orange",
+        "gw": "Troll Slayer Orange",
         "va": "Hot Orange",
         "ap": "Lava Orange"
     },
@@ -191,7 +191,7 @@
         "ap": "Mythical Orange"
     },
     {
-        "gw": "Wildrider Red",
+        "gw": "Wild Rider Red",
         "ap": "Mars Red"
     },
     {
@@ -244,12 +244,12 @@
         "ap": "Cultist Robe"
     },
     {
-        "gw": "Gothor Brown",
-        "ap": "Warewolf Fur"
+        "gw": "Gorthor Brown",
+        "ap": "Werewolf Fur"
     },
     {
         "gw": "Rakarth Flesh",
-        "va": "Heavy Watm Grey",
+        "va": "Heavy Warm Grey",
         "ap": "Banshee Brown"
     },
     {
@@ -272,18 +272,9 @@
         "ap": "Matt White"
     },
     {
-        "gw": "Ceramite",
-        "va": "Dead White",
-        "ap": "Matt White"
-    },
-    {
-        "gw": "Administorium Grey",
+        "gw": "Administratum Grey",
         "va": "Stonewall Grey",
         "ap": "Ash Grey"
-    },
-    {
-        "gw": "Genestealer Purple",
-        "ap": "Oozing Purple"
     },
     {
         "gw": "Xereus Purple",
@@ -330,11 +321,11 @@
     },
     {
         "gw": "Cadian Fleshtone",
-        "va": "Heavy Skintone",
+        "va": "Heavy Skin Tone",
         "ap": "Kobold Skin"
     },
     {
-        "gw": "Kislev",
+        "gw": "Kislev Flesh",
         "va": "Pale Flesh",
         "ap": "Elven Flesh"
     },
@@ -353,7 +344,7 @@
         "ap": "Toxic Boils"
     },
     {
-        "gw": "Ushtabi Bone",
+        "gw": "Ushabti Bone",
         "va": "Bone White",
         "ap": "Skeleton Bone"
     },
@@ -367,7 +358,7 @@
         "ap": "Drake Tooth"
     },
     {
-        "gw": "Kreig Khaki",
+        "gw": "Krieg Khaki",
         "va": "Dead Flesh",
         "ap": "Necrotic Flesh"
     },
@@ -392,12 +383,12 @@
     },
     {
         "gw": "Deathworld Forest",
-        "va": "Camo Green",
+        "va": "Camouflage Green",
         "ap": "Elf Green"
     },
     {
         "gw": "Elysian Green",
-        "va": "Camo Green",
+        "va": "Camouflage Green",
         "ap": "Commando Green"
     },
     {
@@ -405,7 +396,7 @@
         "ap": "Witch Brew"
     },
     {
-        "gw": "Kreig Khaki",
+        "gw": "Krieg Khaki",
         "ap": "Scaly Hide"
     },
     {
@@ -456,30 +447,6 @@
         "ap": "Poisonous Cloud"
     },
     {
-        "gw": "Ryza Rust",
-        "va": "Rust",
-        "ap": "Dry Rust"
-    },
-    {
-        "gw": "Ryza Rust",
-        "va": "Dry Rust",
-        "ap": "Dry Rust"
-    },
-    {
-        "gw": "Blood For The Blood God",
-        "va": "Fresh Blood",
-        "ap": "Glistening Blood"
-    },
-    {
-        "gw": "Typhus Corrosion",
-        "ap": "Wet Mud"
-    },
-    {
-        "gw": "Nurgles Rot",
-        "va": "Vomit",
-        "ap": "Disgusting Slime"
-    },
-    {
         "gw": "Carroburg Crimson",
         "va": "Red Wash",
         "ap": "Red Tone"
@@ -519,7 +486,7 @@
         "ap": "Purple Tone"
     },
     {
-        "gw": "Biel Tan Greem",
+        "gw": "Biel Tan Green",
         "va": "Green Wash",
         "ap": "Green Tone"
     },
