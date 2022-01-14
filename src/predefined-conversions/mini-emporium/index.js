@@ -5,7 +5,7 @@ const Replacements = require('../../contract/replacements');
 
 /**
  * @param {string} file
- * @returns {string[][]}
+ * @returns {*[]}
  */
 function readConversionJson(file) {
     try {

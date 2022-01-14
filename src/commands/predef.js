@@ -4,7 +4,7 @@ async function handler(argv) {
     let optionSelected = false;
     const predefinedConversionsService = require('../service/predefinedConversionsService');
 
-    if (argv.e || argv['mini-eamporium']) {
+    if (argv.e || argv['mini-emporium']) {
         optionSelected = true;
         predefinedConversionsService.registerMiniEmporiumConversions();
     }
@@ -31,6 +31,6 @@ module.exports = {
         a: {
             alias: 'army-painter',
             describe: 'insert conversions from Army Painter/s conversion chart'
-        },
+        }
     }
 };

@@ -5,7 +5,7 @@ const replacementsService = require('./replacementsService');
 const Logger = require('./loggerService');
 
 const predefinedConversionsByMiniEmporium = require('../predefined-conversions/mini-emporium');
-const predefinedConversionsByArmyPainter =  require('../predefined-conversions/army-painter');
+const predefinedConversionsByArmyPainter = require('../predefined-conversions/army-painter');
 
 const logger = new Logger('predefined-conversion');
 
