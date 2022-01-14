@@ -505,58 +505,68 @@
         "ap": "Disgusting Slime"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Carroburg Crimson",
+        "va": "Red Wash",
+        "ap": "Red Tone"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Reikland Fleshshade",
+        "va": "Flesh Wash",
+        "ap": "Flesh Wash"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Seraphim Sepia",
+        "va": "Sepia Wash",
+        "ap": "Light Tone"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Nuln Oil",
+        "va": "Black Wash",
+        "ap": "Dark Tone"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Mid Brown"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Reikland Fleshshade",
+        "va": "Umber Wash",
+        "ap": "Mid Brown"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Strong Tone"
     },
     {
-        "gw": "",
+        "gw": "Druchii Violet",
         "va": "",
-        "ap": ""
+        "ap": "Purple Tone"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Biel Tan Greem",
+        "va": "Green Wash",
+        "ap": "Green Tone"
     },
     {
-        "gw": "",
+        "gw": "Athonian Camoshade",
         "va": "",
-        "ap": ""
+        "ap": "Military Shader"
     },
     {
-        "gw": "",
-        "va": "",
-        "ap": ""
+        "gw": "Drakenhof Nightshade",
+        "va": "Blue Wash",
+        "ap": "Blue Tone"
+    },
+    {
+        "gw": "Seraphim Sepia",
+        "va": "Sepia Wash",
+        "ap": "Soft Tone"
+    },
+    {
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Soft Tone"
     }
 ]
