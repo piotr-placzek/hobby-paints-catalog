@@ -4,9 +4,15 @@ async function handler(argv) {
     let optionSelected = false;
     const predefinedConversionsService = require('../service/predefinedConversionsService');
 
-    if (argv.e || argv['mini-eamporium']) {
+    if (argv.e || argv['mini-emporium']) {
+
         optionSelected = true;
         predefinedConversionsService.registerMiniEmporiumConversions();
+    }
+
+    if (argv.a || argv['army-painter']) {
+        optionSelected = true;
+        predefinedConversionsService.registerArmyPainterConversions();
     }
 
     if (!optionSelected) {
@@ -22,6 +28,10 @@ module.exports = {
         e: {
             alias: 'mini-emporium',
             describe: 'insert conversions from miniemporium.pl'
+        },
+        a: {
+            alias: 'army-painter',
+            describe: 'insert conversions from Army Painter/s conversion chart'
         }
     }
 };

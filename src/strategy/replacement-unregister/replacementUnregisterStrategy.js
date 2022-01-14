@@ -9,12 +9,12 @@ const { getReplacementsColumnsWithValues, getRecord } = require('../../utils/db'
  * @param {Map} replacements
  * @param {*} db
  */
-async function replacementRegisterStrategy(targetModelName, replacements, db) {
+async function replacementUnregisterStrategy(targetModelName, replacements, db) {
     const replacementsMap = new Map(replacements);
     const target = replacementsMap.get(targetModelName);
     replacementsMap.delete(targetModelName);
 
-    await setReplacements(targetModelName, Array.from(target.values), replacementsMap, db);
+    await removeReplacements(targetModelName, Array.from(target.values), replacementsMap, db);
 }
 
 /**
@@ -25,7 +25,7 @@ async function replacementRegisterStrategy(targetModelName, replacements, db) {
  * @param {*} db
  * @returns {Model[]} entities that could not be saved in the database
  */
-async function setReplacements(targetModelName, targetTradeNames, replacementsMap, db) {
+async function removeReplacements(targetModelName, targetTradeNames, replacementsMap, db) {
     const targetTradeNamesCount = targetTradeNames.length;
     const cantSave = [];
     for (let i = 0; i < targetTradeNamesCount; i++) {
@@ -36,7 +36,7 @@ async function setReplacements(targetModelName, targetTradeNames, replacementsMa
 
         for (const [column, values] of Object.entries(replacements)) {
             const currentValues = target[column] ? Array.from(target[column]) : [];
-            const newValues = [...currentValues, ...values];
+            const newValues = currentValues.filter(value => values.indexOf(value) === -1);
             dataForUpdate = Object.assign(dataForUpdate, getDataForUpdate(column, newValues));
         }
 
@@ -62,4 +62,4 @@ function getDataForUpdate(columnName, values) {
     return obj;
 }
 
-module.exports = replacementRegisterStrategy;
+module.exports = replacementUnregisterStrategy;
