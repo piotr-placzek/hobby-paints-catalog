@@ -12,10 +12,10 @@ function getReplacements(argv) {
     const sc = argv.s ? argv.s : argv.scale75;
 
     const replacements = new Replacements(
-        gw ? new Set(gw) : undefined,
-        va ? new Set(va) : undefined,
-        ap ? new Set(ap) : undefined,
-        sc ? new Set(sc) : undefined
+        gw ? new Set([gw]) : undefined,
+        va ? new Set([va]) : undefined,
+        ap ? new Set([ap]) : undefined,
+        sc ? new Set([sc]) : undefined
     );
 
     return replacements;
@@ -25,9 +25,9 @@ async function insert(argv) {
     const replacements = getReplacements(argv);
 
     if (replacements.isValid()) {
-        const replacementsService = require('./replacementsService');
+        const replacementsService = require('../service/replacementsService');
         const db = require('../shared/db');
-        replacementsService.registerReplacements(replacements, db);
+        replacementsService.registerReplacements(replacements.getMap(), db);
     } else {
         printUseHelpMsg();
     }
@@ -37,9 +37,9 @@ async function remove(argv) {
     const replacements = getReplacements(argv);
 
     if (replacements.isValid()) {
-        const replacementsService = require('./replacementsService');
+        const replacementsService = require('../service/replacementsService');
         const db = require('../shared/db');
-        replacementsService.unregisterReplacements(replacements, db);
+        replacementsService.unregisterReplacements(replacements.getMap(), db);
     } else {
         printUseHelpMsg();
     }
