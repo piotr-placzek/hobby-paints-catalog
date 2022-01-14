@@ -1,0 +1,502 @@
+[
+    {
+        "gw": "Kabalite Green",
+        "va": "Jade Green",
+        "ap": "Wizards Orb"
+    },
+    {
+        "gw": "Sybarite Green",
+        "va": "Foul Green",
+        "ap": "Elemental Bolt"
+    },
+    {
+        "gw": "Temple Guard Blue",
+        "va": "",
+        "ap": "Toxic Mist"
+    },
+    {
+        "gw": "Baharroth Blue",
+        "va": "",
+        "ap": "Royal Cloak"
+    },
+    {
+        "gw": "Thousand Sons Blue",
+        "va": "Turquoise",
+        "ap": "Hydra Turquoise"
+    },
+    {
+        "gw": "Kantor Blue",
+        "va": "Imperial Blue",
+        "ap": "Deep Blue"
+    },
+    {
+        "gw": "Maccage Blue",
+        "va": "",
+        "ap": "Griffon Blue"
+    },
+    {
+        "gw": "Altdorf Guard Blue",
+        "va": "Ultramarine",
+        "ap": "Ultramarine Blue"
+    },
+    {
+        "gw": "Caledor Sky",
+        "va": "Magic Blue",
+        "ap": "Viking Blue"
+    },
+    {
+        "gw": "Calgar Blue",
+        "va": "",
+        "ap": "Electric Blue"
+    },
+    {
+        "gw": "Blue Horror",
+        "va": "Electric BLue",
+        "ap": "Ice Storm"
+    },
+    {
+        "gw": "Lother Blue",
+        "va": "",
+        "ap": "Troglodyte Blue"
+    },
+    {
+        "gw": "Teclis Blue",
+        "va": "Andrea Blue",
+        "ap": "Crystal Blue"
+    },
+    {
+        "gw": "Kantor Blue",
+        "va": "Imperial Blue",
+        "ap": "Dark Sky"
+    },
+    {
+        "gw": "Russ Grey",
+        "va": "Sombre Grey",
+        "ap": "Wolf Grey"
+    },
+    {
+        "gw": "Fenrisian Grey",
+        "va": "Grey Blue",
+        "ap": "Fog Grey"
+    },
+    {
+        "gw": "Ulthuan Grey",
+        "va": "Ghost Grey",
+        "ap": "Gorgon Hide"
+    },
+    {
+        "gw": "Abaddon BLack",
+        "va": "Black",
+        "ap": "Matt Black"
+    },
+    {
+        "gw": "Eshin Grey",
+        "va": "",
+        "ap": "Necromancer Cloak"
+    },
+    {
+        "gw": "Dawnstone",
+        "va": "Cold Grey",
+        "ap": "Dungeon Grey"
+    },
+    {
+        "gw": "Warpfield Grey",
+        "va": "",
+        "ap": "Field Grey"
+    },
+    {
+        "gw": "Dawnstone",
+        "va": "Cold Grey",
+        "ap": "Uniform Grey"
+    },
+    {
+        "gw": "Stormvermin Fur",
+        "va": "Heavy Chercoal",
+        "ap": "Castle Grey"
+    },
+    {
+        "gw": "Skavenblight Dinge",
+        "va": "",
+        "ap": "Hardened Carapace"
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    },
+    {
+        "gw": "",
+        "va": "",
+        "ap": ""
+    }
+]
