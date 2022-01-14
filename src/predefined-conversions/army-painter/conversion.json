@@ -1,0 +1,512 @@
+[
+    {
+        "gw": "Kabalite Green",
+        "va": "Jade Green",
+        "ap": "Wizards Orb"
+    },
+    {
+        "gw": "Sybarite Green",
+        "va": "Foul Green",
+        "ap": "Elemental Bolt"
+    },
+    {
+        "gw": "Temple Guard Blue",
+        "ap": "Toxic Mist"
+    },
+    {
+        "gw": "Baharroth Blue",
+        "ap": "Royal Cloak"
+    },
+    {
+        "gw": "Thousand Sons Blue",
+        "va": "Turquoise",
+        "ap": "Hydra Turquoise"
+    },
+    {
+        "gw": "Kantor Blue",
+        "va": "Imperial Blue",
+        "ap": "Deep Blue"
+    },
+    {
+        "gw": "Macragge Blue",
+        "ap": "Griffon Blue"
+    },
+    {
+        "gw": "Altdorf Guard Blue",
+        "va": "Ultramarine",
+        "ap": "Ultramarine Blue"
+    },
+    {
+        "gw": "Caledor Sky",
+        "va": "Magic Blue",
+        "ap": "Viking Blue"
+    },
+    {
+        "gw": "Calgar Blue",
+        "ap": "Electric Blue"
+    },
+    {
+        "gw": "Blue Horror",
+        "va": "Electric BLue",
+        "ap": "Ice Storm"
+    },
+    {
+        "gw": "Lothern Blue",
+        "ap": "Troglodyte Blue"
+    },
+    {
+        "gw": "Teclis Blue",
+        "va": "Andrea Blue",
+        "ap": "Crystal Blue"
+    },
+    {
+        "gw": "Kantor Blue",
+        "va": "Imperial Blue",
+        "ap": "Dark Sky"
+    },
+    {
+        "gw": "Russ Grey",
+        "va": "Sombre Grey",
+        "ap": "Wolf Grey"
+    },
+    {
+        "gw": "Fenrisian Grey",
+        "va": "Grey Blue",
+        "ap": "Fog Grey"
+    },
+    {
+        "gw": "Ulthuan Grey",
+        "va": "Ghost Grey",
+        "ap": "Gorgon Hide"
+    },
+    {
+        "gw": "Abaddon BLack",
+        "va": "Black",
+        "ap": "Matt Black"
+    },
+    {
+        "gw": "Eshin Grey",
+        "ap": "Necromance Cloak"
+    },
+    {
+        "gw": "Dawnstone",
+        "va": "Cold Grey",
+        "ap": "Dungeon Grey"
+    },
+    {
+        "gw": "Warpfiend Grey",
+        "ap": "Field Grey"
+    },
+    {
+        "gw": "Dawnstone",
+        "va": "Cold Grey",
+        "ap": "Uniform Grey"
+    },
+    {
+        "gw": "Stormvermin Fur",
+        "va": "Heavy Charcoal",
+        "ap": "Castle Grey"
+    },
+    {
+        "gw": "Skavenblight Dinge",
+        "ap": "Hardened Carapace"
+    },
+    {
+        "gw": "Balor Brown",
+        "va": "Leather Brown",
+        "ap": "Hemp Rope"
+    },
+    {
+        "gw": "Baneblade Brown",
+        "va": "Heavy Brown",
+        "ap": "Monster Brown"
+    },
+    {
+        "gw": "Steel Legion Drab",
+        "va": "Earth",
+        "ap": "Leather Brown"
+    },
+    {
+        "gw": "Mournfang Brown",
+        "va": "Beasty Brown",
+        "ap": "Dirt Spatter"
+    },
+    {
+        "gw": "Dryad Bark",
+        "va": "Charred Brown",
+        "ap": "Oak Brown"
+    },
+    {
+        "gw": "Zamesi Desert",
+        "va": "Plague Brown",
+        "ap": "Basilisk Brown"
+    },
+    {
+        "gw": "Zamesi Desert",
+        "va": "Plague Brown",
+        "ap": "Sulphide Ochre"
+    },
+    {
+        "gw": "Zandri Dust",
+        "va": "Khaki",
+        "ap": "Desert Yellow"
+    },
+    {
+        "gw": "Hexos Palesun",
+        "va": "Pale Yellow",
+        "ap": "Moon Dust"
+    },
+    {
+        "gw": "Dorn Yellow",
+        "va": "Pale Yellow",
+        "ap": "Moon Dust"
+    },
+    {
+        "va": "Moon Yellow",
+        "ap": "Babe Blonde"
+    },
+    {
+        "gw": "Flash Gitz Yellow",
+        "va": "Sun Yellow",
+        "ap": "Daemonic Yellow"
+    },
+    {
+        "gw": "Yriel Yellow",
+        "va": "Gold Yellow",
+        "ap": "Phoenix Flames"
+    },
+    {
+        "gw": "Jokaero Orange",
+        "va": "Scrofulous Brown",
+        "ap": "Fire Lizard"
+    },
+    {
+        "gw": "Troll Slayer Orange",
+        "va": "Hot Orange",
+        "ap": "Lava Orange"
+    },
+    {
+        "gw": "Fire Dragon Bright",
+        "va": "Orange Fire",
+        "ap": "Mythical Orange"
+    },
+    {
+        "gw": "Wild Rider Red",
+        "ap": "Mars Red"
+    },
+    {
+        "gw": "Evil Sunz Scarlet",
+        "va": "Bloody Red",
+        "ap": "Pure Red"
+    },
+    {
+        "gw": "Wazdakka Red",
+        "va": "Gory Red",
+        "ap": "Dragon Red"
+    },
+    {
+        "gw": "Khorne Red",
+        "va": "Scarlet Red",
+        "ap": "Abomination Gore"
+    },
+    {
+        "gw": "Mephiston Red",
+        "va": "Heavy Red",
+        "ap": "Vampire Red"
+    },
+    {
+        "gw": "Khorne Red",
+        "ap": "Crusted Sore"
+    },
+    {
+        "gw": "Screamer Pink",
+        "va": "Warlord Purple",
+        "ap": "Wasteland Soil"
+    },
+    {
+        "gw": "Warpfiend Grey",
+        "va": "Hexed Lichen",
+        "ap": "Grimoire Purple"
+    },
+    {
+        "gw": "Daemonette Hide",
+        "va": "Hexed Lichen",
+        "ap": "Grimoire Purple"
+    },
+    {
+        "gw": "Mechanicus Standard Grey",
+        "va": "Heavy Grey",
+        "ap": "Dark Stone"
+    },
+    {
+        "gw": "Baneblade Brown",
+        "va": "Heavy Brown",
+        "ap": "Cultist Robe"
+    },
+    {
+        "gw": "Gorthor Brown",
+        "ap": "Werewolf Fur"
+    },
+    {
+        "gw": "Rakarth Flesh",
+        "va": "Heavy Warm Grey",
+        "ap": "Banshee Brown"
+    },
+    {
+        "gw": "Screaming Skull",
+        "va": "Off-White",
+        "ap": "Brainmatter Beige"
+    },
+    {
+        "gw": "Ulthuan Grey",
+        "va": "Cold Grey",
+        "ap": "Spaceship Exterior"
+    },
+    {
+        "gw": "Pallid Wych Flesh",
+        "ap": "Stone Golem"
+    },
+    {
+        "gw": "White Scar",
+        "va": "Dead White",
+        "ap": "Matt White"
+    },
+    {
+        "gw": "Administratum Grey",
+        "va": "Stonewall Grey",
+        "ap": "Ash Grey"
+    },
+    {
+        "gw": "Xereus Purple",
+        "va": "Royal Purple",
+        "ap": "Alien Purple"
+    },
+    {
+        "gw": "Pink Horror",
+        "ap": "Warlock Purple"
+    },
+    {
+        "gw": "Emperors Children",
+        "va": "Squid Pink",
+        "ap": "Pixie Pink"
+    },
+    {
+        "gw": "Fulgrim Pink",
+        "ap": "Centaur Skin"
+    },
+    {
+        "gw": "Bugmans Glow",
+        "va": "Tan",
+        "ap": "Scar Tissue"
+    },
+    {
+        "gw": "Ratskin Flesh",
+        "va": "Dwarf Skin",
+        "ap": "Tanned Flesh"
+    },
+    {
+        "gw": "Skrag Brown",
+        "va": "Parasite Brown",
+        "ap": "Fur Brown"
+    },
+    {
+        "gw": "Tau Light Ochre",
+        "va": "Filthy Brown",
+        "ap": "Troll Claws"
+    },
+    {
+        "gw": "Bestigor Flesh",
+        "va": "Scrofulous Brown",
+        "ap": "Barbarian Flesh"
+    },
+    {
+        "gw": "Cadian Fleshtone",
+        "va": "Heavy Skin Tone",
+        "ap": "Kobold Skin"
+    },
+    {
+        "gw": "Kislev Flesh",
+        "va": "Pale Flesh",
+        "ap": "Elven Flesh"
+    },
+    {
+        "gw": "Ungor Flesh",
+        "va": "Pale Flesh",
+        "ap": "Elven Flesh"
+    },
+    {
+        "gw": "Flayed One Flesh",
+        "va": "Elfic Flesh",
+        "ap": "Corpse Pale"
+    },
+    {
+        "gw": "Slaanesh Grey",
+        "ap": "Toxic Boils"
+    },
+    {
+        "gw": "Ushabti Bone",
+        "va": "Bone White",
+        "ap": "Skeleton Bone"
+    },
+    {
+        "gw": "Pallid Wych Flesh",
+        "ap": "Mummy Robes"
+    },
+    {
+        "gw": "Screaming Skull",
+        "va": "Bone White",
+        "ap": "Drake Tooth"
+    },
+    {
+        "gw": "Krieg Khaki",
+        "va": "Dead Flesh",
+        "ap": "Necrotic Flesh"
+    },
+    {
+        "gw": "Nurgling Green",
+        "va": "Dead Flesh",
+        "ap": "Combat Fatigue"
+    },
+    {
+        "gw": "Death Guard Green",
+        "va": "Yellow Olive",
+        "ap": "Venom Wyrm"
+    },
+    {
+        "gw": "Stormvermin Fur",
+        "ap": "Filthy Cape"
+    },
+    {
+        "gw": "Castellan Green",
+        "va": "Cayman Green",
+        "ap": "Crypt Wraith"
+    },
+    {
+        "gw": "Deathworld Forest",
+        "va": "Camouflage Green",
+        "ap": "Elf Green"
+    },
+    {
+        "gw": "Elysian Green",
+        "va": "Camouflage Green",
+        "ap": "Commando Green"
+    },
+    {
+        "gw": "Ogryn Camo",
+        "ap": "Witch Brew"
+    },
+    {
+        "gw": "Krieg Khaki",
+        "ap": "Scaly Hide"
+    },
+    {
+        "gw": "Warboss Green",
+        "va": "Goblin Green",
+        "ap": "Goblin Green"
+    },
+    {
+        "gw": "Gauss Blaster Green",
+        "ap": "Kraken Skin"
+    },
+    {
+        "gw": "Warpstone Glow",
+        "va": "Sick Green",
+        "ap": "Greenskin"
+    },
+    {
+        "gw": "Caliban Green",
+        "va": "Sick Green",
+        "ap": "Angel Green"
+    },
+    {
+        "gw": "Skarsnik Green",
+        "va": "Scorpy Green",
+        "ap": "Mouldy Clothes"
+    },
+    {
+        "gw": "Straken Green",
+        "va": "Yellow Olive",
+        "ap": "Army Green"
+    },
+    {
+        "gw": "Moot Green",
+        "va": "Scorpy Green",
+        "ap": "Snake Scales"
+    },
+    {
+        "gw": "Niblet Green",
+        "va": "Livery Green",
+        "ap": "JUngle Green"
+    },
+    {
+        "va": "Fluorescent Yellow",
+        "ap": "Poisonous Cloud"
+    },
+    {
+        "va": "Fluorescent Green",
+        "ap": "Poisonous Cloud"
+    },
+    {
+        "gw": "Carroburg Crimson",
+        "va": "Red Wash",
+        "ap": "Red Tone"
+    },
+    {
+        "gw": "Reikland Fleshshade",
+        "va": "Flesh Wash",
+        "ap": "Flesh Wash"
+    },
+    {
+        "gw": "Seraphim Sepia",
+        "va": "Sepia Wash",
+        "ap": "Light Tone"
+    },
+    {
+        "gw": "Nuln Oil",
+        "va": "Black Wash",
+        "ap": "Dark Tone"
+    },
+    {
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Mid Brown"
+    },
+    {
+        "gw": "Reikland Fleshshade",
+        "va": "Umber Wash",
+        "ap": "Mid Brown"
+    },
+    {
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Strong Tone"
+    },
+    {
+        "gw": "Druchii Violet",
+        "ap": "Purple Tone"
+    },
+    {
+        "gw": "Biel Tan Green",
+        "va": "Green Wash",
+        "ap": "Green Tone"
+    },
+    {
+        "gw": "Athonian Camoshade",
+        "ap": "Military Shader"
+    },
+    {
+        "gw": "Drakenhof Nightshade",
+        "va": "Blue Wash",
+        "ap": "Blue Tone"
+    },
+    {
+        "gw": "Seraphim Sepia",
+        "va": "Sepia Wash",
+        "ap": "Soft Tone"
+    },
+    {
+        "gw": "Agrax Earthshade",
+        "va": "Umber Wash",
+        "ap": "Soft Tone"
+    }
+]

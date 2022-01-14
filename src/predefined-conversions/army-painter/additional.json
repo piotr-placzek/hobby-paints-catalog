@@ -1,0 +1,35 @@
+[
+    {
+        "gw": "Ceramite White",
+        "va": "Dead White",
+        "ap": "Matt White"
+    },
+    {
+        "gw": "Genestealer Purple",
+        "ap": "Oozing Purple"
+    },
+    {
+        "gw": "Ryza Rust",
+        "va": "Rust",
+        "ap": "Dry Rust"
+    },
+    {
+        "gw": "Ryza Rust",
+        "va": "Dry Rust",
+        "ap": "Dry Rust"
+    },
+    {
+        "gw": "Blood For The Blood God",
+        "va": "Fresh Blood",
+        "ap": "Glistening Blood"
+    },
+    {
+        "gw": "Typhus Corrosion",
+        "ap": "Wet Mud"
+    },
+    {
+        "gw": "Nurgles Rot",
+        "va": "Vomit",
+        "ap": "Disgusting Slime"
+    }
+]
