@@ -5,7 +5,6 @@ async function handler(argv) {
     const predefinedConversionsService = require('../service/predefinedConversionsService');
 
     if (argv.e || argv['mini-emporium']) {
-
         optionSelected = true;
         predefinedConversionsService.registerMiniEmporiumConversions();
     }
