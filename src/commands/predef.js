@@ -9,6 +9,11 @@ async function handler(argv) {
         predefinedConversionsService.registerMiniEmporiumConversions();
     }
 
+    if (argv.a || argv['army-painter']) {
+        optionSelected = true;
+        predefinedConversionsService.registerArmyPainterConversions();
+    }
+
     if (!optionSelected) {
         console.log('Use <predef --help> to see available options.');
     }
@@ -22,6 +27,10 @@ module.exports = {
         e: {
             alias: 'mini-emporium',
             describe: 'insert conversions from miniemporium.pl'
-        }
+        },
+        a: {
+            alias: 'army-painter',
+            describe: 'insert conversions from Army Painter/s conversion chart'
+        },
     }
 };
