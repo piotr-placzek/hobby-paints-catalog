@@ -11,12 +11,10 @@
     },
     {
         "gw": "Temple Guard Blue",
-        "va": "",
         "ap": "Toxic Mist"
     },
     {
         "gw": "Baharroth Blue",
-        "va": "",
         "ap": "Royal Cloak"
     },
     {
@@ -31,7 +29,6 @@
     },
     {
         "gw": "Maccage Blue",
-        "va": "",
         "ap": "Griffon Blue"
     },
     {
@@ -46,7 +43,6 @@
     },
     {
         "gw": "Calgar Blue",
-        "va": "",
         "ap": "Electric Blue"
     },
     {
@@ -56,7 +52,6 @@
     },
     {
         "gw": "Lother Blue",
-        "va": "",
         "ap": "Troglodyte Blue"
     },
     {
@@ -91,7 +86,6 @@
     },
     {
         "gw": "Eshin Grey",
-        "va": "",
         "ap": "Necromancer Cloak"
     },
     {
@@ -101,7 +95,6 @@
     },
     {
         "gw": "Warpfield Grey",
-        "va": "",
         "ap": "Field Grey"
     },
     {
@@ -116,7 +109,6 @@
     },
     {
         "gw": "Skavenblight Dinge",
-        "va": "",
         "ap": "Hardened Carapace"
     },
     {
@@ -170,7 +162,6 @@
         "ap": "Moon Dust"
     },
     {
-        "gw": "",
         "va": "Moon Yellow",
         "ap": "Babe Blonde"
     },
@@ -201,7 +192,6 @@
     },
     {
         "gw": "Wildrider Red",
-        "va": "",
         "ap": "Mars Red"
     },
     {
@@ -226,7 +216,6 @@
     },
     {
         "gw": "Khorne Red",
-        "va": "",
         "ap": "Crusted Sore"
     },
     {
@@ -256,7 +245,6 @@
     },
     {
         "gw": "Gothor Brown",
-        "va": "",
         "ap": "Warewolf Fur"
     },
     {
@@ -276,7 +264,6 @@
     },
     {
         "gw": "Pallid Wych Flesh",
-        "va": "",
         "ap": "Stone Golem"
     },
     {
@@ -296,7 +283,6 @@
     },
     {
         "gw": "Genestealer Purple",
-        "va": "",
         "ap": "Oozing Purple"
     },
     {
@@ -306,7 +292,6 @@
     },
     {
         "gw": "Pink Horror",
-        "va": "",
         "ap": "Warlock Purple"
     },
     {
@@ -316,7 +301,6 @@
     },
     {
         "gw": "Fulgrim Pink",
-        "va": "",
         "ap": "Centaur Skin"
     },
     {
@@ -366,7 +350,6 @@
     },
     {
         "gw": "Slaanesh Grey",
-        "va": "",
         "ap": "Toxic Boils"
     },
     {
@@ -376,7 +359,6 @@
     },
     {
         "gw": "Pallid Wych Flesh",
-        "va": "",
         "ap": "Mummy Robes"
     },
     {
@@ -401,7 +383,6 @@
     },
     {
         "gw": "Stormvermin Fur",
-        "va": "",
         "ap": "Filthy Cape"
     },
     {
@@ -421,12 +402,10 @@
     },
     {
         "gw": "Ogryn Camo",
-        "va": "",
         "ap": "Witch Brew"
     },
     {
         "gw": "Kreig Khaki",
-        "va": "",
         "ap": "Scaly Hide"
     },
     {
@@ -436,7 +415,6 @@
     },
     {
         "gw": "Gauss Blaster Green",
-        "va": "",
         "ap": "Kraken Skin"
     },
     {
@@ -470,12 +448,10 @@
         "ap": "JUngle Green"
     },
     {
-        "gw": "",
         "va": "Fluorescent Yellow",
         "ap": "Poisonous Cloud"
     },
     {
-        "gw": "",
         "va": "Fluorescent Green",
         "ap": "Poisonous Cloud"
     },
@@ -496,7 +472,6 @@
     },
     {
         "gw": "Typhus Corrosion",
-        "va": "",
         "ap": "Wet Mud"
     },
     {
@@ -541,7 +516,6 @@
     },
     {
         "gw": "Druchii Violet",
-        "va": "",
         "ap": "Purple Tone"
     },
     {
@@ -551,7 +525,6 @@
     },
     {
         "gw": "Athonian Camoshade",
-        "va": "",
         "ap": "Military Shader"
     },
     {
