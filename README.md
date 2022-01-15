@@ -1,54 +1,22 @@
 # hobby-paints-catalog
-The application will allow you to manage your paints and search for substitutes.
 
-## Useful links
-- [Project's webpage](https://piotr-placzek.github.io/hobby-paints-catalog-page/)
-- [Project's Agile Board](https://github.com/piotr-placzek/hobby-paints-catalog/projects/1)
-- [Project progress by milestones](https://github.com/piotr-placzek/hobby-paints-catalog/milestones)
-- [Buy me a coffee](https://buycoffee.to/poohpatine)
+This is a simple application to manage paints and their replacements for painters of figures and models.
+App is totally free and open source. Feel free to contribute, and DON'T USE IT for commercial purposes.
 
-# Requirements
-| Node.js | v16.10.0 |
-|-|-|
-# Setup
-Navigate into directory with `package.json` file and type this commands:
-- `npm i`
-- `npm run migration`
+If you are enjoying with this app and you find it useful,
+you can always [buy me a coffee](https://buycoffee.to/poohpatine) ;)
 
-# Testing
-You can run all test tasks with `npm test` command.
+## Table of Content
 
-# Running
-You can run app with `npm start` command.
-
-### Running with parameters
-If you need to run app with some parameters,
-you can do this using `node src/index.js` command
-or if you want to use `npm start` then you have to separate command and arguments
-with additional `--`.
-
-You can find available commands and options by using `-h` or `--help`.
-
-Remember to set environment variable `NODE_ENV` to `production`.
-
-#### Example of use
-```
-$ npm start -- find-by-name -n="flat yellow"
-
-> hobby-paints-catalog@1.0.0 start
-> NODE_ENV=production node src/index.js "find-by-name" "-n=flat yellow"
-
-[Tue, 21 Dec 2021 18:25:38 GMT][info][searching-service] - Searching for "flat yellow"
-[Tue, 21 Dec 2021 18:25:39 GMT][info][searching-service] - Found in VallejoPaint table
-[Tue, 21 Dec 2021 18:25:39 GMT][info][results] -
-┌───────────────────┬────────────────┬───────────────────┬─────────────┐
-│ product_type      │ catalog_number │ trade_name        │ series      │
-├───────────────────┼────────────────┼───────────────────┼─────────────┤
-│ VallejoPaint      │ 70.953         │ flat yellow       │ model color │
-├───────────────────┼────────────────┼───────────────────┼─────────────┤
-│ GameWorkshopPaint │ 99189950001    │ averland sunset   │ base        │
-├───────────────────┼────────────────┼───────────────────┼─────────────┤
-│ GameWorkshopPaint │ 99189951002    │ flash gitz yellow │ layer       │
-└───────────────────┴────────────────┴───────────────────┴─────────────┘
-```
-
+1. [License]()
+2. [Introduction]()
+3. [Requirements]()
+4. [Instalation]()
+    4.1. [From source code]()
+5. [Usage]()
+    5.1. [Command line]()
+6. [Contributing](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/.github/CONTRIBUTING.md)
+    6.1. [Code of Conduct](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/CODE_OF_CONDUCT.md)
+    6.2. [Bug report](https://github.com/piotr-placzek/hobby-paints-catalog/issues/new?assignees=piotr-placzek&labels=bug&template=bug_report.md)
+    6.3. [Feature request](https://github.com/piotr-placzek/hobby-paints-catalog/issues/new?assignees=piotr-placzek&labels=bug&template=feature_request.md)
+7. [Useful links]()
