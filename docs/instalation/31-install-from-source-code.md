@@ -21,7 +21,7 @@ Resolving deltas: 100% (178/178), done.
 
 Before start you should be sure that you hav got valid Node.js and npm version.
 
-## Pobieranie
+## Downloading
 
 It is essential to start your HPC adventure by downloading the latest possible version of the code. You can do this by downloading/cloning the [repository](https://github.com/piotr-placzek/hobby-paints-catalog) or by selecting one of the [released versions](https://github.com/piotr-placzek/hobby-paints-catalog/releases).
 
@@ -59,6 +59,11 @@ added 789 packages from 591 contributors and audited 791 packages in 21.046s
 85 packages are looking for funding
   run `npm fund` for details
 ```
+
+## Environment config
+
+You have to remember that you need some environment variables. All of them are described in `.env.template` file.
+You can set them in different ways, but the simplest way is renaming `.env.template` file into `.env`.
 
 ## Preparing database
 
