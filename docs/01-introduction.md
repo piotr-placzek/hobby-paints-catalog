@@ -35,10 +35,10 @@ Further plans and progress can be seen [here](https://github.com/piotr-placzek/h
 _Example of CLI use_
 
 ```
-pplaczek@vms:~/hobby-paints-catalog$ npm start -- find-by-name -n="flat yellow"
+pplaczek@vms:~/hobby-paints-catalog$ npm start -- find -n="flat yellow"
 
 > hobby-paints-catalog@1.0.0 start
-> NODE_ENV=production node src/index.js "find-by-name" "-n=flat yellow"
+> NODE_ENV=production node src/index.js "find" "-n=flat yellow"
 
 [Tue, 21 Dec 2021 18:25:38 GMT][info][searching-service] - Searching for "flat yellow"
 [Tue, 21 Dec 2021 18:25:39 GMT][info][searching-service] - Found in VallejoPaint table
