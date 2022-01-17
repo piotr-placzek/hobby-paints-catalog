@@ -8,7 +8,7 @@ you can always [buy me a coffee](https://buycoffee.to/poohpatine) ;)
 
 ## Table of Content
 
-1. [License]()
+1. [License](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/LICENSE)
 
 2. [Introduction](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/docs/01-introduction.md)
 
@@ -30,4 +30,4 @@ you can always [buy me a coffee](https://buycoffee.to/poohpatine) ;)
     
     6.3. [Feature request](https://github.com/piotr-placzek/hobby-paints-catalog/issues/new?assignees=piotr-placzek&labels=bug&template=feature_request.md)
 
-7. [Useful links]()
+7. [Useful links](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/docs/07-useful-links.md)
