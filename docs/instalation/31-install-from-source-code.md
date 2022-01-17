@@ -23,7 +23,7 @@ Before start you should be sure that you hav got valid Node.js and npm version.
 
 ## Pobieranie
 
-Swoją przygodę z HPC koniecznie musisz rozpocząć od pobrania możliwie najnowszej wersji kodu. Możesz to zrobić pobierając/klonując [repozytorium](https://github.com/piotr-placzek/hobby-paints-catalog) lub wybierając jedną z [wydanych wersji]().
+It is essential to start your HPC adventure by downloading the latest possible version of the code. You can do this by downloading/cloning the [repository](https://github.com/piotr-placzek/hobby-paints-catalog) or by selecting one of the [released versions](https://github.com/piotr-placzek/hobby-paints-catalog/releases).
 
 
 ```
@@ -33,7 +33,7 @@ pplaczek@vms:~$ npm -v
 8.3.0
 ```
 
-If something goes wrong you should [read this article]().
+If something goes wrong you should [read this article](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/docs/02-requirements.md).
 
 ## Dependencies
 
