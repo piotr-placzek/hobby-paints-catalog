@@ -85,3 +85,15 @@ Using environment "development".
 
 (...)
 ```
+
+### Filling database with initial data
+
+Shortly after the migration is first performed, your database will be created but it will be empty; it will not contain any records describing paint.
+
+To initialize the database with the paint information:
+- Make sure that your `.env` file contains the correct configuration.
+- Make sure you are connected to the internet.
+- Run `npm start -- scrape` with the appropriate options for you.
+
+After downloading the paint information, you can register replacements from predefined conversion charts.
+Simply run the `npm start -- predef` command with the options appropriate for you.
