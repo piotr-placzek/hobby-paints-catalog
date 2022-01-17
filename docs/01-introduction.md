@@ -22,11 +22,10 @@ Comfort - a key element.
 Using many different tables before or during painting is not convenient. I prefer simple text interfaces of applications that allow quick and intuitive retrieval of information. That's why HPC was developed as a CLI in the first place.
 
 I know that CLI is not comfortable for everyone, so I am tying my further application development plans to the target audience.
-I would like the target audience to be:
 
-- the application had a graphical interface,
-- use the application via smartphone,
-- run a public api online.
+- The application will have a graphical interface
+- You will be able to use the application via smartphone
+- I want to run a public api online.
 
 The greatest motivation for further development of the application will be your support and involvement in the use of the application and suggestions for further functionality that you would expect from this application. You can introduce any of your ideas as an [ISSUE at GitHubi](https://github.com/piotr-placzek/hobby-paints-catalog/issues).
 
