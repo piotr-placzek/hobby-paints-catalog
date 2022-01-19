@@ -70,12 +70,15 @@ async function importVallejoAcrylicsPaintsCatalog() {
  * @returns {ArmyPainterPaint[]} entities that could not be saved in the database
  */
 async function importArmyPainterPaintsCatalog() {
-    return importPaintsCatalog(
-        'army painter',
-        Object.values(config.CATALOG_URL.AP),
-        apScrapingStrategy,
-        db.ArmyPainterPaint
-    );
+    const src = [];
+    for (const [series, url] of Object.entries(config.CATALOG_URL.AP)) {
+        const MAX = config.CATALOG_LIMITATIONS.AP[`${series}_PAGES`];
+        for (let p = 1; p <= MAX; p++) {
+            src.push(`${url}?page=${p}`);
+        }
+    }
+
+    return importPaintsCatalog('army painter', src, apScrapingStrategy, db.ArmyPainterPaint);
 }
 
 module.exports = {
