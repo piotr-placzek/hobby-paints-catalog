@@ -5,15 +5,16 @@ const db = require('../../shared/db');
  * @param {*} cheerio cheerio object with loaded html
  * @returns {ArmyPainterPaint[]}
  */
-function apScrapingStrategy(cheerio) {
+function apScrapingStrategy(cheerio, options) {
     const products = [];
-    const selector = 'table table table';
+    const selector = 'li.ProductCard';
     cheerio(selector).each(
         (i, table) => {
             const item = cheerio.load(table);
-            const imageUrl = item('td div a img[width="120"]').attr('src');
-            const tradeName = item('td h3').text();
-            const product = productFactory(imageUrl, tradeName);
+            const imageUrl = item('.ProductCard-Figure div.Image img').attr('src');
+            const tradeName = item('.ProductCard-Content .ProductCard-Name').text();
+            const series = options.overwriteSeriesWith;
+            const product = productFactory(imageUrl, tradeName, series);
             products.push(product);
         }
     );
@@ -22,9 +23,11 @@ function apScrapingStrategy(cheerio) {
 
 /**
  * @param {string} imageUrl
+ * @param {string} tradeName
+ * @param {string} series
  * @returns {ArmyPainterPaint}
  */
-function productFactory(imageUrl, tradeName) {
+function productFactory(imageUrl, tradeName, series) {
     /**
      * @param {string} imageUrl
      * @returns {string}
@@ -39,22 +42,12 @@ function productFactory(imageUrl, tradeName) {
      * @returns {string}
      */
     const extractCatalogNumber = (fileName) => {
-        const p = fileName.split('-');
+        const p = fileName.split('_');
         return p[0];
-    };
-
-    /**
-     * @param {string} imageUrl
-     * @returns {string}
-     */
-    const extractSeries = (imageUrl) => {
-        const p = imageUrl.split('/');
-        return p[p.indexOf('products') + 1].split(' ')[0];
     };
 
     const fileName = getFileName(imageUrl);
     const catalogNumber = extractCatalogNumber(fileName);
-    const series = extractSeries(imageUrl);
 
     return db.ArmyPainterPaint.build({
         catalog_number: catalogNumber.toUpperCase().trim(),

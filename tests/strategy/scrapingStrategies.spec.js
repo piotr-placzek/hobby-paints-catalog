@@ -1,9 +1,9 @@
 'use strict';
 
-const cheerio = require("cheerio");
-const gwScrapingStrategy = require("../../src/strategy/scraping/gwScrapingStrategy");
-const vaScrapingStrategy = require("../../src/strategy/scraping/vaScrapingStrategy");
-const apScrapingStrategy = require("../../src/strategy/scraping/apScrapingStrategy");
+const cheerio = require('cheerio');
+const gwScrapingStrategy = require('../../src/strategy/scraping/gwScrapingStrategy');
+const vaScrapingStrategy = require('../../src/strategy/scraping/vaScrapingStrategy');
+const apScrapingStrategy = require('../../src/strategy/scraping/apScrapingStrategy');
 
 describe('Scraping strategies', () => {
     it('Games Workshop', async () => {
@@ -11,10 +11,10 @@ describe('Scraping strategies', () => {
             catalog_number: '99189950001',
             trade_name: 'averland sunset',
             series: 'base',
-            image_url: 'https://www.games-workshop.com/resources/catalog/product/600x620/99189950001_baseAverlandSunset.svg'
+            image_url:
+                'https://www.games-workshop.com/resources/catalog/product/600x620/99189950001_baseAverlandSunset.svg'
         };
-        const htmlContainer =
-        `
+        const htmlContainer = `
         <div>
             <img class="test-img-prod4210269 record-spotlight__item-image" data-name="/Base-Averland-Sunset-2019" alt="Averland Sunset" src="https://www.games-workshop.com/resources/catalog/product/600x620/99189950001_baseAverlandSunset.svg"></img>
         </div>
@@ -31,10 +31,10 @@ describe('Scraping strategies', () => {
             catalog_number: '70.951',
             trade_name: 'white',
             series: 'model color',
-            image_url: 'https://acrylicosvallejo.com/wp-content/uploads/2018/06/model-color-vallejo-white-70951-300x300.jpg'
+            image_url:
+                'https://acrylicosvallejo.com/wp-content/uploads/2018/06/model-color-vallejo-white-70951-300x300.jpg'
         };
-        const htmlContainer =
-            `
+        const htmlContainer = `
         <li class="product type-product post-16004 status-publish first instock product_cat-model-color-en has-post-thumbnail product-type-simple mobile-cols-2">
             <div class="product-wrapper">
                 <div class="product-images preview-type-none">
@@ -83,10 +83,10 @@ describe('Scraping strategies', () => {
             catalog_number: 'WP1101',
             trade_name: 'matt black',
             series: 'warpaints',
-            image_url: 'https://shop.thearmypainter.com/media/catalog/product/cache/7e4f11d7d3cf5b69648cd19d19c55f74/W/P/WP1101_Matt_Black_1_180a.png'
+            image_url:
+                'https://shop.thearmypainter.com/media/catalog/product/cache/7e4f11d7d3cf5b69648cd19d19c55f74/W/P/WP1101_Matt_Black_1_180a.png'
         };
-        const htmlContainer =
-        `
+        const htmlContainer = `
         <li class="ProductCard">
             <a class="ProductCard-Link" href="/eu/wp1101p">
                 <div class="ProductCard-FigureReview">
@@ -136,7 +136,7 @@ describe('Scraping strategies', () => {
         `;
 
         const C = await cheerio.load(htmlContainer);
-        const result = apScrapingStrategy(C)[0];
+        const result = apScrapingStrategy(C, { overwriteSeriesWith: 'warpaints' })[0];
 
         expect(result).toMatchObject(expected);
     });
