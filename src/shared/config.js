@@ -27,9 +27,7 @@ module.exports = {
             MECHA_COLOR: process.env.CATALOG_URL_VA_MECHA_COLOR
         },
         AP: {
-            ACRYLICS_WARPAINTS: process.env.CATALOG_URL_AP_ACRYLICS_WARPAINTS,
-            METALLICS_WARPAINTS: process.env.CATALOG_URL_AP_METALLICS_WARPAINTS,
-            WASHES: process.env.CATALOG_URL_AP_WASHES
+            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS_PAGES
         }
     },
     CATALOG_LIMITATIONS: {
@@ -42,6 +40,9 @@ module.exports = {
             METAL_COLOR_PAGES: process.env.CATALOG_URL_VA_METAL_COLOR_PAGES,
             PANZER_ACES_PAGES: process.env.CATALOG_URL_VA_PANZER_ACES_PAGES,
             MECHA_COLOR_PAGES: process.env.CATALOG_URL_VA_MECHA_COLOR_PAGES
+        },
+        AP: {
+            WARPAINTS_PAGES: process.env.CATALOG_URL_AP_WARPAINTS_PAGES
         }
     }
 };
