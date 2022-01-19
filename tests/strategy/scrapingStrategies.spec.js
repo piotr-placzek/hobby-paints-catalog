@@ -136,7 +136,7 @@ describe('Scraping strategies', () => {
         `;
 
         const C = await cheerio.load(htmlContainer);
-        const result = apScrapingStrategy(C, { overwriteSeriesWith: 'warpaints' })[0];
+        const result = apScrapingStrategy(C)[0];
 
         expect(result).toMatchObject(expected);
     });
