@@ -78,61 +78,61 @@ describe('Scraping strategies', () => {
         expect(result).toMatchObject(expected);
     });
 
-    if('Army Painter', async () => {
+    it('Army Painter', async () => {
         const expected = {
             catalog_number: 'WP1101',
             trade_name: 'matt black',
             series: 'warpaints',
-            image_url: 'https://admin.thearmypainter.com/files/products/Warpaints Single 2020/thumbs/WP1101-Matt Black-1 copy.jpg'
+            image_url: 'https://shop.thearmypainter.com/media/catalog/product/cache/7e4f11d7d3cf5b69648cd19d19c55f74/W/P/WP1101_Matt_Black_1_180a.png'
         };
         const htmlContainer =
         `
-        <body><table><table>
-        <table width="480" cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-                <tr>
-                    <td width="130" valign="top" height="189">
-                        <div class="left padBot10 padRight10"><a title="Matt Black #0"
-                                href="https://admin.thearmypainter.com/files/products/Warpaints Single 2020/WP1101_Warpaint_P-Photo_2016.png"
-                                class="fancybox" rel="gal-100103"><img
-                                    src="https://admin.thearmypainter.com/files/products/Warpaints Single 2020/thumbs/WP1101-Matt Black-1 copy.jpg"
-                                    width="120" height="120" border="0"></a></div>
-                        <div class="left padTop12"><a title="Matt Black #1"
-                                href="https://admin.thearmypainter.com/files/products/Warpaints 2016/WP-hex-all.png"
-                                class="fancybox" rel="gal-100103"><img
-                                    src="https://admin.thearmypainter.com/files/products/Warpaints 2016/thumbs/WP-hex-all.png"
-                                    width="55" height="55" border="0"></a></div>
-                        <div class="left padTop12 padLeft10"><a title="Matt Black #2"
-                                href="https://admin.thearmypainter.com/files/products/Warpaints 2016/match-CP3001-1280x.png"
-                                class="fancybox" rel="gal-100103"><img
-                                    src="https://admin.thearmypainter.com/files/products/Warpaints 2016/thumbs/match-CP3001-1280x.png"
-                                    width="55" height="55" border="0"></a></div>
-                        <div class="clear"></div>
-                        <div class="padTop12"></div>
-                        <div class="clear"></div>
-                    </td>
-                    <td width="280" valign="top" class="padTop3">
-                        <a name="Matt Black" class="AnchorTag"></a>
-                        <h3>Matt Black</h3>
-                        <div>Utilizing loads of heavy pigment for an excellent coverage the Warpaints has been specifically
-                            designed to compliment an already existing range; this paint is a 100% match of the Colour Primer of
-                            the same name.</div>
-                    </td>
-                    <td width="70" valign="top" align="right">
-                        <form action="" method="post">
-                            <input type="hidden" name="productid" value="100103">
-                            <input type="hidden" name="name" value="Matt Black">
-                            <input type="hidden" name="price" value="2.75">
-                            <input type="hidden" name="quantity" value="1">
-                            <input type="image" src="gfx/cart_add.png" onclick=" addbasket( this.form ); return false; ">
-                        </form>
-                        <br><br>
-                        <div class="padRight5"><b>Price</b><br>€2.75</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </table></table></body>
+        <li class="ProductCard">
+            <a class="ProductCard-Link" href="/eu/wp1101p">
+                <div class="ProductCard-FigureReview">
+                    <div class="ProductCard-Badges"></div>
+                    <figure class="ProductCard-Figure">
+                        <div class="Image Image_ratio_custom Image_imageStatus_1 Image_hasSrc ProductCard-Picture">
+                            <img
+                                src="https://shop.thearmypainter.com/media/catalog/product/cache/7e4f11d7d3cf5b69648cd19d19c55f74/W/P/WP1101_Matt_Black_1_180a.png"
+                                alt="Matt Black"
+                                loading="lazy"
+                                class="Image-Image"
+                                style="width: 100%; height: 100%"
+                            />
+                        </div>
+                        <img
+                            alt="Matt Black"
+                            src="https://shop.thearmypainter.com/media/catalog/product/cache/7e4f11d7d3cf5b69648cd19d19c55f74/W/P/WP1101_Matt_Black_1_180a.png"
+                            style="display: none"
+                        />
+                    </figure>
+                </div>
+                <div class="ProductCard-Content">
+                    <div class="ProductCard-Brand"></div>
+                    <a class="ProductCard-Link" href="/eu/wp1101p">
+                        <p class="ProductCard-Name ProductCard-Name_isLoaded">Matt Black</p>
+                    </a>
+                    <div class="ProductCard-PriceWrapper">
+                        <p aria-label="Product price: 2.99€" class="ProductPrice ProductCard-Price" >
+                            <span><span>2.99€</span></span>
+                        </p>
+                    </div>
+                    <div class="ProductCard-ConfigurableOptions"></div>
+                </div>
+            </a>
+            <div class="ProductCard-ProductActions">
+            <div class="ProductWishlistButton">
+                <button title="Please sign in first!" class="ProductWishlistButton-Button ProductWishlistButton-Button_isDisabled Button Button_isHollow ProductCard-WishListButton">
+                    <div class="ProductWishlistButton-Heart"></div>
+                </button>
+            </div>
+            </div>
+            <div class="ProductCard-AdditionalContent"></div>
+            <button class="Button AddToCart ProductActions-AddToCart">
+              <span>Add to cart</span><span>Adding...</span>
+          </button>
+        </li>
         `;
 
         const C = await cheerio.load(htmlContainer);
