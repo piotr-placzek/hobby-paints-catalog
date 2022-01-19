@@ -4,7 +4,7 @@ const registerStrategies = require('../strategy/replacement-register');
 const readStrategies = require('../strategy/replacement-read');
 const unregisterStrategies = require('../strategy/replacement-unregister');
 
-const Replacements = require('../contract/replacements');
+const Replacements = require('../utils/replacements');
 const LoggerService = require('../service/loggerService');
 
 const logger = new LoggerService('replacements-service');
