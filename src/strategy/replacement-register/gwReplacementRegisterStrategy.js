@@ -10,7 +10,7 @@ async function gwReplacementRegisterStrategy(replacements, db, logger) {
     const targetModelName = 'GameWorkshopPaint';
     if (replacements.has(targetModelName)) {
         logger.log('registering replacements with gwReplacementRegisterStrategy');
-        await replacementRegisterStrategy(targetModelName, replacements, db);
+        await replacementRegisterStrategy(targetModelName, replacements, db, logger);
     }
 }
 

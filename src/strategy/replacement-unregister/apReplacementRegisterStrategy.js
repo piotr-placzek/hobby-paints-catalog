@@ -10,7 +10,7 @@ async function apReplacementUnregisterStrategy(replacements, db, logger) {
     const targetModelName = 'ArmyPainterPaint';
     if (replacements.has(targetModelName)) {
         logger.log('unregistering replacements with apReplacementUnregisterStrategy');
-        await replacementUnregisterStrategy(targetModelName, replacements, db);
+        await replacementUnregisterStrategy(targetModelName, replacements, db, logger);
     }
 }
 

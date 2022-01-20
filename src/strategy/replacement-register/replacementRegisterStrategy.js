@@ -1,20 +1,19 @@
 'use strict';
 
-const Logger = require('../../service/loggerService');
-const logger = new Logger('replacements-strategy');
 const { getReplacementsColumnsWithValues, getRecord } = require('../../utils/db');
 
 /**
  * @param {string} targetModelName
  * @param {Map} replacements
+ * @param {LoggerService} logger
  * @param {*} db
  */
-async function replacementRegisterStrategy(targetModelName, replacements, db) {
+async function replacementRegisterStrategy(targetModelName, replacements, db, logger) {
     const replacementsMap = new Map(replacements);
     const target = replacementsMap.get(targetModelName);
     replacementsMap.delete(targetModelName);
 
-    await setReplacements(targetModelName, Array.from(target.values), replacementsMap, db);
+    await setReplacements(targetModelName, Array.from(target.values), replacementsMap, db, logger);
 }
 
 /**
@@ -23,9 +22,10 @@ async function replacementRegisterStrategy(targetModelName, replacements, db) {
  * @param {string} targetColumnName
  * @param {Map} replacementsMap
  * @param {*} db
+ * @param {LoggerService} logger
  * @returns {Model[]} entities that could not be saved in the database
  */
-async function setReplacements(targetModelName, targetTradeNames, replacementsMap, db) {
+async function setReplacements(targetModelName, targetTradeNames, replacementsMap, db, logger) {
     const targetTradeNamesCount = targetTradeNames.length;
     const cantSave = [];
     for (let i = 0; i < targetTradeNamesCount; i++) {

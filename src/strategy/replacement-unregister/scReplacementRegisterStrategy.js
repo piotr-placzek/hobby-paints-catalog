@@ -10,7 +10,7 @@ async function scReplacementUnregisterStrategy(replacements, db, logger) {
     const targetModelName = 'Scale75Paint';
     if (replacements.has(targetModelName)) {
         logger.log('unregistering replacements with vaReplacementUnregisterStrategy');
-        await replacementUnregisterStrategy(targetModelName, replacements, db);
+        await replacementUnregisterStrategy(targetModelName, replacements, db, logger);
     }
 }
 

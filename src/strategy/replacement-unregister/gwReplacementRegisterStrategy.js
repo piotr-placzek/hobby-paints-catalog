@@ -10,7 +10,7 @@ async function gwReplacementUnregisterStrategy(replacements, db, logger) {
     const targetModelName = 'GameWorkshopPaint';
     if (replacements.has(targetModelName)) {
         logger.log('unregistering replacements with gwReplacementUnregisterStrategy');
-        await replacementUnregisterStrategy(targetModelName, replacements, db);
+        await replacementUnregisterStrategy(targetModelName, replacements, db, logger);
     }
 }
 

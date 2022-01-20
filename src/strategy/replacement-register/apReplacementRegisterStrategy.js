@@ -10,7 +10,7 @@ async function apReplacementRegisterStrategy(replacements, db, logger) {
     const targetModelName = 'ArmyPainterPaint';
     if (replacements.has(targetModelName)) {
         logger.log('registering replacements with apReplacementRegisterStrategy');
-        await replacementRegisterStrategy(targetModelName, replacements, db);
+        await replacementRegisterStrategy(targetModelName, replacements, db, logger);
     }
 }
 
