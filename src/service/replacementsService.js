@@ -17,16 +17,15 @@ function constructReplacementsObject(product) {
         product.sc_replacements
     );
 
-    if(replacements.isValid()) {
+    if (replacements.isValid()) {
         return replacements.getMap();
-    }
-    else {
+    } else {
         throw new Error('can not construct valid replacements map');
     }
 }
 
 async function useStrategiesForReplacements(strategies, replacements, db) {
-    const resutls = []
+    const resutls = [];
     for (const strategy of Object.values(strategies)) {
         try {
             const data = await strategy(replacements, db, logger);
