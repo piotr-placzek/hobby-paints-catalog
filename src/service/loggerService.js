@@ -96,10 +96,10 @@ class LoggerService {
         if (tier() < minTier('warn')) return;
         this.logger.log(
             `[${this._date()}]`.yellow +
-                '[warning]'.orange +
+                '[warning]'.red +
                 `[${this.name}]` +
                 separator +
-                this._buildMessageString(arguments).red
+                this._buildMessageString(arguments).yellow
         );
     }
 

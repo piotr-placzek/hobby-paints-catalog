@@ -1,7 +1,7 @@
 'use strict';
 
 const fse = require('fs-extra');
-const Replacements = require('../../contract/replacements');
+const Replacements = require('../../utils/replacements');
 
 /**
  * @param {string} file
