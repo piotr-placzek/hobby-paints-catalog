@@ -29,14 +29,18 @@ async function handler(argv) {
     }
 }
 
-module.exports = {
-    handler,
-    command: 'scrape [options]',
-    desc: 'scrape paints from web into database',
-    builder: {
-        g: { alias: 'games-workshop', describe: 'Use for select Games Workshop paints' },
-        v: { alias: 'vallejo', describe: 'Use for select Vallejo Acrylics paints' },
-        a: { alias: 'army-painter', describe: 'Use for select Army Painter paints' },
-        s: { alias: 'scale75', describe: 'Use for select Scale75 paints' }
-    }
-};
+const ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLocaleLowerCase() : '';
+module.exports =
+    ENV !== 'production' ?
+        {
+            handler,
+            command: 'scrape [options]',
+            desc: 'scrape paints from web into database',
+            builder: {
+                g: { alias: 'games-workshop', describe: 'Use for select Games Workshop paints' },
+                v: { alias: 'vallejo', describe: 'Use for select Vallejo Acrylics paints' },
+                a: { alias: 'army-painter', describe: 'Use for select Army Painter paints' },
+                s: { alias: 'scale75', describe: 'Use for select Scale75 paints' }
+            }
+        } :
+        {};
