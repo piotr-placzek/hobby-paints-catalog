@@ -1,23 +1,23 @@
 'use strict';
 
-const replacementsStrategies = require('../../src/strategy/replacement-register');
+const strategyWrappers = require('../../src/strategy/replacements/wrappers');
 
 describe('Replacements register strategies', () => {
 
     it('can import gwReplacementRegisterStrategy', () => {
-        expect(replacementsStrategies.gwReplacementRegisterStrategy).not.toBe(undefined);
+        expect(strategyWrappers.gwReplacementStrategyWrapper).not.toBe(undefined);
     });
 
     it('can import vaReplacementRegisterStrategy', () => {
-        expect(replacementsStrategies.vaReplacementRegisterStrategy).not.toBe(undefined);
+        expect(strategyWrappers.vaReplacementStrategyWrapper).not.toBe(undefined);
     });
 
     it('can import apReplacementRegisterStrategy', () => {
-        expect(replacementsStrategies.apReplacementRegisterStrategy).not.toBe(undefined);
+        expect(strategyWrappers.apReplacementStrategyWrapper).not.toBe(undefined);
     });
 
     it('can import scReplacementRegisterStrategy', () => {
-        expect(replacementsStrategies.scReplacementRegisterStrategy).not.toBe(undefined);
+        expect(strategyWrappers.scReplacementStrategyWrapper).not.toBe(undefined);
     });
 
     it('gwReplacementRegisterStrategy', async () => {
