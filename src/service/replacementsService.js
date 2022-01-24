@@ -1,8 +1,8 @@
 'use strict';
 
-const registerStrategies = require('../strategy/replacement-register');
-const readStrategies = require('../strategy/replacement-read');
-const unregisterStrategies = require('../strategy/replacement-unregister');
+const replacementReadStrategy = require('../strategy/replacements/read');
+const { replacementRegisterStrategy, replacementUnregisterStrategy } = require('../strategy/replacements/manage');
+const strategyWrappers = require('../strategy/replacements/wrappers')
 
 const Replacements = require('../utils/replacements');
 const LoggerService = require('../service/loggerService');
@@ -24,31 +24,31 @@ function constructReplacementsObject(product) {
     }
 }
 
-async function useStrategiesForReplacements(strategies, replacements, db) {
-    const resutls = [];
-    for (const strategy of Object.values(strategies)) {
+async function useStrategyForReplacements(strategy, replacements, db) {
+    const results = [];
+    for (const wrapper of Object.values(strategyWrappers)) {
         try {
-            const data = await strategy(replacements, db, logger);
-            resutls.push(...data);
+            const data = await wrapper(strategy, replacements, db, logger);
+            results.push(...data);
         } catch (error) {
             logger.error(error.message);
         }
     }
-    return resutls;
+    return results;
 }
 
 /**
  * @param {Replacements} replacements valid replacements object
  */
 function registerReplacements(replacements, db) {
-    useStrategiesForReplacements(registerStrategies, replacements, db);
+    useStrategyForReplacements(replacementRegisterStrategy, replacements, db);
 }
 
 /**
  * @param {Replacements} replacements valid replacements object
  */
 function unregisterReplacements(replacements, db) {
-    useStrategiesForReplacements(unregisterStrategies, replacements, db);
+    useStrategyForReplacements(replacementUnregisterStrategy, replacements, db);
 }
 
 /**
@@ -63,7 +63,7 @@ async function getReplacements(product, db) {
     } catch (error) {
         logger.error(error.message, product);
     }
-    return await useStrategiesForReplacements(readStrategies, replacements, db);
+    return await useStrategyForReplacements(replacementReadStrategy, replacements, db);
 }
 
 module.exports = {
