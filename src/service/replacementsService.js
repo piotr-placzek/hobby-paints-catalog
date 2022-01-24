@@ -2,7 +2,7 @@
 
 const replacementReadStrategy = require('../strategy/replacements/read');
 const { replacementRegisterStrategy, replacementUnregisterStrategy } = require('../strategy/replacements/manage');
-const strategyWrappers = require('../strategy/replacements/wrappers')
+const strategyWrappers = require('../strategy/replacements/wrappers');
 
 const Replacements = require('../utils/replacements');
 const LoggerService = require('../service/loggerService');

@@ -16,7 +16,7 @@ function _preprocessReplacements(targetModelName, replacements) {
     return {
         targetTradeNames: Array.from(target.values),
         replacementsMap
-    }
+    };
 }
 
 /**
@@ -49,7 +49,7 @@ async function replacementUnregisterStrategy(targetModelName, replacements, db, 
  * @returns {Model[]} entities that could not be saved in the database
  */
 async function manageReplacements(action, targetModelName, replacements, db, logger) {
-    const {targetTradeNames, replacementsMap} = _preprocessReplacements(targetModelName, replacements);
+    const { targetTradeNames, replacementsMap } = _preprocessReplacements(targetModelName, replacements);
     const targetTradeNamesCount = targetTradeNames.length;
     const cantSave = [];
     for (let i = 0; i < targetTradeNamesCount; i++) {
