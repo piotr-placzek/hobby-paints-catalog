@@ -5,7 +5,7 @@ function printUseHelpMsg() {
 }
 
 function getReplacements(argv) {
-    const Replacements = require('../contract/replacements');
+    const Replacements = require('../utils/replacements');
     const gw = argv.g ? argv.g : argv['games-workshop'];
     const va = argv.v ? argv.v : argv.vallejo;
     const ap = argv.a ? argv.a : argv['army-painter'];

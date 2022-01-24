@@ -1,6 +1,6 @@
 'use strict';
 
-const Replacements = require('../../src/contract/replacements');
+const Replacements = require('../../src/utils/replacements');
 
 describe('Replacements contract', () => {
     it('construct valid contract', () => {

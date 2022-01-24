@@ -1,48 +1,15 @@
 'use strict';
 
-const registerStrategies = require('../strategy/replacement-register');
-const readStrategies = require('../strategy/replacement-read');
-const unregisterStrategies = require('../strategy/replacement-unregister');
+const replacementReadStrategy = require('../strategy/replacements/read');
+const { replacementRegisterStrategy, replacementUnregisterStrategy } = require('../strategy/replacements/manage');
+const strategyWrappers = require('../strategy/replacements/wrappers');
 
-const Replacements = require('../contract/replacements');
+const Replacements = require('../utils/replacements');
 const LoggerService = require('../service/loggerService');
 
 const logger = new LoggerService('replacements-service');
 
-/**
- * @param {Replacements} replacements valid replacements object
- */
-async function registerReplacements(replacements, db) {
-    for (const strategy of Object.values(registerStrategies)) {
-        try {
-            await strategy(replacements, db, logger);
-        } catch (error) {
-            logger.error(error.message);
-        }
-    }
-}
-
-/**
- * @param {Replacements} replacements valid replacements object
- */
-async function unregisterReplacements(replacements, db) {
-    for (const strategy of Object.values(unregisterStrategies)) {
-        try {
-            await strategy(replacements, db, logger);
-        } catch (error) {
-            logger.error(error.message);
-        }
-    }
-}
-
-/**
- * @param {Model} product
- * @param {*} db
- * @returns {Model[]}
- */
-async function getReplacements(product, db) {
-    const result = [];
-
+function constructReplacementsObject(product) {
     const replacements = new Replacements(
         product.gw_replacements,
         product.va_replacements,
@@ -51,18 +18,52 @@ async function getReplacements(product, db) {
     );
 
     if (replacements.isValid()) {
-        const replacementsMap = replacements.getMap();
-        for (const strategy of Object.values(readStrategies)) {
-            try {
-                const data = await strategy(replacementsMap, db, logger);
-                result.push(...data);
-            } catch (error) {
-                logger.error(error.message);
-            }
+        return replacements.getMap();
+    } else {
+        throw new Error('can not construct valid replacements map');
+    }
+}
+
+async function useStrategyForReplacements(strategy, replacements, db) {
+    const results = [];
+    for (const wrapper of Object.values(strategyWrappers)) {
+        try {
+            const data = await wrapper(strategy, replacements, db, logger);
+            results.push(...data);
+        } catch (error) {
+            logger.error(error.message);
         }
     }
+    return results;
+}
 
-    return result;
+/**
+ * @param {Replacements} replacements valid replacements object
+ */
+function registerReplacements(replacements, db) {
+    useStrategyForReplacements(replacementRegisterStrategy, replacements, db);
+}
+
+/**
+ * @param {Replacements} replacements valid replacements object
+ */
+function unregisterReplacements(replacements, db) {
+    useStrategyForReplacements(replacementUnregisterStrategy, replacements, db);
+}
+
+/**
+ * @param {Model} product
+ * @param {*} db
+ * @returns {Model[]}
+ */
+async function getReplacements(product, db) {
+    let replacements;
+    try {
+        replacements = constructReplacementsObject(product);
+    } catch (error) {
+        logger.error(error.message, product);
+    }
+    return await useStrategyForReplacements(replacementReadStrategy, replacements, db);
 }
 
 module.exports = {
