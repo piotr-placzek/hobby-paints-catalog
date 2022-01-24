@@ -15,7 +15,9 @@
     "scrape:all": "node src/index.js scrape -gva",
     "scrape:gw": "node src/index.js scrape -g",
     "scrape:va": "node src/index.js scrape -v",
-    "scrape:ap": "node src/index.js scrape -a"
+    "scrape:ap": "node src/index.js scrape -a",
+    "compilation": "rm -rf bin && pkg -c pkg.config.json src/index.js",
+    "postcompilation": "for f in ./bin/index-*; do mv \"$f\" \"$(echo \"$f\" | sed s/index/hpc/)\"; done && ./postcompilation.sh"
   },
   "repository": {
     "type": "git",
@@ -41,8 +43,7 @@
     "grunt-run": "^0.8.1",
     "jest": "^27.3.1",
     "jit-grunt": "^0.10.0",
-    "path": "^0.12.7",
-    "sequelize-cli": "^6.3.0"
+    "pkg": "^5.5.2"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
@@ -53,6 +54,8 @@
     "puppeteer": "^11.0.0",
     "sequelize": "^6.12.0-alpha.1",
     "sqlite3": "^5.0.2",
-    "yargs": "^17.3.0"
+    "yargs": "^17.3.0",
+    "path": "^0.12.7",
+    "sequelize-cli": "^6.3.0"
   }
 }
