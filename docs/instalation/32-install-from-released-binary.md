@@ -4,7 +4,7 @@ This is simpliest way for download and use this app.
 
 ## Downloading
 
-Just go to the [releases page]() and download archive with binaries for your operating system.
+Just go to the [releases page](https://github.com/piotr-placzek/hobby-paints-catalog/releases) and download archive with binaries for your operating system.
 
 ## "Instalation"
 
