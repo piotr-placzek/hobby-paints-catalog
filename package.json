@@ -26,7 +26,7 @@
     "scripts": {
         "postinstall": "electron-builder install-app-deps",
         "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-        "build": "electron-builder build -lwm",
+        "build": "electron-builder build -lw",
         "build:linux": "electron-builder build -l",
         "build:windows": "electron-builder build -w",
         "build:macos": "electron-builder build -m",
