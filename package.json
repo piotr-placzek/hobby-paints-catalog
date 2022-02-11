@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "bin": "src/index.js",
-
   "scripts": {
     "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "start": "NODE_ENV=production node src/index.js",
+    "start": "NODE_ENV=production qode src/index.js",
+    "start:old": "NODE_ENV=production node src/index.js",
     "jest": "NODE_ENV=test TZ=UTC jest",
     "test": "NODE_ENV=test grunt test",
     "uglify": "grunt uglify",
@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/piotr-placzek/hobby-paints-catalog#readme",
   "devDependencies": {
+    "@nodegui/packer": "^1.5.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
@@ -49,6 +50,7 @@
     "sequelize-cli": "^6.3.0"
   },
   "dependencies": {
+    "@nodegui/nodegui": "^0.46.0",
     "cheerio": "^1.0.0-rc.10",
     "cli-table": "^0.3.11",
     "colors": "^1.4.0",
@@ -64,7 +66,11 @@
     "assets": [
       "src/**/*.json"
     ],
-    "targets": ["node16-linux-x64", "node16-macos-x64", "node16-win-x64"],
+    "targets": [
+      "node16-linux-x64",
+      "node16-macos-x64",
+      "node16-win-x64"
+    ],
     "outputPath": "./bin"
   }
 }
