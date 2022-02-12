@@ -28,7 +28,7 @@ function insertData(data) {
 }
 
 function createTable() {
-    table = new Tabulator('#main-table', {
+    table = new Tabulator('#main-table', { //eslint-disable-line no-undef
         data: tableData,
         height: '100%',
         layout: 'fitColumns',
@@ -72,7 +72,7 @@ function replacementsFilter(data, param) {
     let matched = false;
     keys.forEach(k => {
         if (!matched) {
-            matched = !data[k] ? false : data[k].match(re) ? true : false;
+            matched = !data[k] ? false : data[k].match(re) ? true : false; //eslint-disable-line no-unneeded-ternary
         }
     });
     return matched;

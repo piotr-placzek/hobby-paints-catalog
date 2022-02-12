@@ -6,7 +6,7 @@ const guiService = require('./service/guiService');
 
 function setupCli() {
     const I = process.argv[1] === '.' ? 2 : 1;
-    require('yargs/yargs')(process.argv.slice(I))
+    require('yargs/yargs')(process.argv.slice(I)) //eslint-disable-line no-unused-expressions
         .usage('Usage: $0 <command> [options]')
         .commandDir('./commands')
         .help('h')
@@ -31,7 +31,7 @@ function loadMainWindow() {
 }
 
 function isCalledViaCLI(args) {
-    return args && args.length > 1 && args[1] !== '.';
+    return args && args.length > 1; // && args[1] !== '.' this can be needed after build
 }
 
 function appReadyHandler() {
@@ -39,14 +39,13 @@ function appReadyHandler() {
         setupCli();
     } else {
         loadMainWindow();
+        ipcMain.on('getAllProducts', guiService.getAllProducts);
     }
 }
 
 function main() {
     app.on('ready', appReadyHandler);
     app.on('window-all-closed', app.quit);
-
-    ipcMain.on('getAllProducts', guiService.getAllProducts);
 }
 
 main();
