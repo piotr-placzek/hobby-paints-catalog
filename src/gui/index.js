@@ -1,32 +1,112 @@
-var tabledata = [
-    {id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
-    {id:2, name:"Mary May", age:"1", col:"blue", dob:"14/05/1982"},
-    {id:3, name:"Christine Lobowski", age:"42", col:"green", dob:"22/05/1982"},
-    {id:4, name:"Brendon Philips", age:"125", col:"orange", dob:"01/08/1980"},
-    {id:5, name:"Margret Marmajuke", age:"16", col:"yellow", dob:"31/01/1999"},
-];
-
-var table = new Tabulator("#main-table", {
-    //height:205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-    data:tabledata, //assign data to table
-    layout:"fitColumns", //fit columns to width of table (optional)
-    columns:[ //Define Table Columns
-        {title:"Name", field:"name", width:150},
-        {title:"Age", field:"age", hozAlign:"left", formatter:"progress"},
-        {title:"Favourite Color", field:"col"},
-        {title:"Date Of Birth", field:"dob", sorter:"date", hozAlign:"center"},
-    ],
-});
-
-//trigger an alert message when the row is clicked
-table.on("rowClick", function(e, row){
-   alert("Row " + row.getData().id + " Clicked!!!!");
-});
-
-
 const { ipcRenderer } = require('electron');
+const LoggerService = require('../service/loggerService');
 
-ipcRenderer.on('getAllProducts', (event, arg) => {
-    console.log(arg) // prints "pong"
-  })
-  ipcRenderer.send('getAllProducts', 'ping')
+const logger = new LoggerService('gui');
+logger.info('test');
+
+let table = null;
+const tableData = [];
+tableData.pushArray = a => tableData.push.apply(tableData, a);
+
+function updateLoadingInfo(counter) {
+    document.getElementById('loading-info').innerText = `Loading data: ${counter}.... Please wait.`;
+}
+
+function hideLoader() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+function showTableControls() {
+    document.getElementById('main-table-controls').style.display = 'block';
+}
+
+function getSearchInput() {
+    return document.getElementById('search-input');
+}
+
+function insertData(data) {
+    tableData.pushArray(data);
+}
+
+function createTable() {
+    table = new Tabulator('#main-table', {
+        data: tableData,
+        height: '100%',
+        layout: 'fitColumns',
+        pagination: 'local',
+        paginationSize: 25,
+        paginationCounter: 'rows',
+        columns: [
+            {
+                title: 'Catalog number',
+                field: 'catalog_number',
+                sorter: 'string',
+                sorterParams: { locale: true, alignEmptyValues: 'down' }
+            },
+            {
+                title: 'Trade name',
+                field: 'trade_name',
+                sorter: 'string',
+                sorterParams: { locale: true, alignEmptyValues: 'down' }
+            },
+            {
+                title: 'Series',
+                field: 'series',
+                width: '150px'
+            }
+        ]
+    });
+
+    table.on('rowClick', (_, row) => {
+        getSearchInput().value = row.getData().catalog_number;
+        updateFilter();
+    });
+}
+
+function createBasicRegExp(param) {
+    return new RegExp(`.*${param}.*`, ['i']);
+}
+
+function replacementsFilter(data, param) {
+    const re = createBasicRegExp(param);
+    const keys = ['va_replacements', 'ap_replacements', 'gw_replacements'];
+    let matched = false;
+    keys.forEach(k => {
+        if (!matched) {
+            matched = !data[k] ? false : data[k].match(re) ? true : false;
+        }
+    });
+    return matched;
+}
+
+function customFilter(data, param) {
+    const re = createBasicRegExp(param);
+    const cn = data.catalog_number.match(re);
+    const tn = data.trade_name.match(re);
+    const rf = replacementsFilter(data, param);
+
+    return cn || tn || rf;
+}
+
+function updateFilter() {
+    const value = getSearchInput().value.trim();
+    table.setFilter(customFilter, value);
+}
+
+function init() {
+    ipcRenderer.on('getAllProducts', (_, data) => {
+        insertData(data);
+        updateLoadingInfo(tableData.length);
+    });
+
+    ipcRenderer.on('allProductsSent', () => {
+        createTable();
+        hideLoader();
+        showTableControls();
+    });
+    ipcRenderer.send('getAllProducts');
+
+    getSearchInput().addEventListener('keyup', updateFilter);
+}
+
+init();
