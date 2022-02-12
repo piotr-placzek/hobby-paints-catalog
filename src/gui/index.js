@@ -2,7 +2,6 @@ const { ipcRenderer } = require('electron');
 const LoggerService = require('../service/loggerService');
 
 const logger = new LoggerService('gui');
-logger.info('test');
 
 let table = null;
 const tableData = [];
@@ -95,18 +94,26 @@ function updateFilter() {
 
 function init() {
     ipcRenderer.on('getAllProducts', (_, data) => {
-        insertData(data);
-        updateLoadingInfo(tableData.length);
+        if (data.length) {
+            logger.info('Received', data.length, 'records.');
+            insertData(data);
+            updateLoadingInfo(tableData.length);
+        }
     });
 
     ipcRenderer.on('allProductsSent', () => {
+        logger.info('Creating table', '...', 'Please wait.');
         createTable();
         hideLoader();
         showTableControls();
+        logger.info('Application is ready.', 'Enjoy!');
     });
+
+    logger.info('Fetching data', '...', 'Please wait.');
     ipcRenderer.send('getAllProducts');
 
     getSearchInput().addEventListener('keyup', updateFilter);
 }
 
+logger.info('Initialization.');
 init();
