@@ -31,6 +31,7 @@
         "build:windows": "electron-builder build -w",
         "build:macos": "electron-builder build -m",
         "start": "NODE_ENV=production electron .",
+        "start:dev": "NODE_ENV=development electron .",
         "jest": "NODE_ENV=test TZ=UTC jest",
         "test": "NODE_ENV=test grunt test",
         "uglify": "grunt uglify",
