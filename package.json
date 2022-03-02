@@ -1,6 +1,6 @@
 {
     "name": "hobby-paints-catalog",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A simple application to manage paints and their replacements for painters of figures and models.",
     "author": "Piotr Płaczek <piotr@pplaczek.pl",
     "license": "CC BY-NC-SA",
@@ -18,8 +18,9 @@
         "productName": "hpc",
         "copyright": "Piotr Płaczek <piotr@pplaczek> 2021 CC BY NC SA 4.0 License",
         "files": [
-            "src",
-            ".env",
+            "src"
+        ],
+        "extraResources": [
             "database_production.sqlite"
         ]
     },
@@ -30,6 +31,7 @@
         "build:linux": "electron-builder build -l",
         "build:windows": "electron-builder build -w",
         "build:macos": "electron-builder build -m",
+        "postbuild": "echo NODE_ENV=production > ./dist/.env",
         "start": "NODE_ENV=production electron .",
         "start:dev": "NODE_ENV=development electron .",
         "jest": "NODE_ENV=test TZ=UTC jest",
