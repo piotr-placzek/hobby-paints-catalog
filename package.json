@@ -40,10 +40,10 @@
         "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
         "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
         "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-        "scrape:all": "node src/index.js scrape -gva",
-        "scrape:gw": "node src/index.js scrape -g",
-        "scrape:va": "node src/index.js scrape -v",
-        "scrape:ap": "node src/index.js scrape -a"
+        "scrape:all": "SCRAPE=1 npm run start:dev --scrape -gva",
+        "scrape:gw": "SCRAPE=1 npm run start:dev -- scrape -g",
+        "scrape:va": "SCRAPE=1 npm run start:dev -- scrape -v",
+        "scrape:ap": "SCRAPE=1 npm run start:dev -- scrape -a"
     },
     "devDependencies": {
         "electron": "^17.0.0",

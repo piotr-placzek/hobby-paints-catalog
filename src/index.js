@@ -4,9 +4,9 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const guiService = require('./service/guiService');
 
-function setupCli() {
+async function setupCli() {
     const I = process.argv[1] === '.' ? 2 : 1;
-    require('yargs/yargs')(process.argv.slice(I)) //eslint-disable-line no-unused-expressions
+    await require('yargs/yargs')(process.argv.slice(I)) //eslint-disable-line no-unused-expressions
         .usage('Usage: $0 <command> [options]')
         .commandDir('./commands')
         .help('h')

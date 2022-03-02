@@ -10,7 +10,10 @@ const LoggerService = require('../service/loggerService');
 const logger = new LoggerService('database-orm');
 
 const _dbConfig = dbConfig[sharedConfig.NODE_ENV];
-_dbConfig.storage = path.join(__dirname, '../../..', _dbConfig.storage);
+
+if(!process.env.SCRAPE) {
+    _dbConfig.storage = path.join(__dirname, '../../..', _dbConfig.storage);
+}
 
 const sequelize = new Sequelize(_dbConfig);
 
