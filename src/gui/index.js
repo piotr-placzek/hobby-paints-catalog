@@ -57,10 +57,9 @@ function createTable() {
     });
 
     table.on('rowClick', (_, row) => {
-        if(getSearchInput().value != row.getData().catalog_number) {
+        if (getSearchInput().value !== row.getData().catalog_number) {
             getSearchInput().value = row.getData().catalog_number;
-        }
-        else {
+        } else {
             getSearchInput().value = '';
         }
         updateFilter();
