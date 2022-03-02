@@ -102,3 +102,12 @@ To initialize the database with the paint information:
 
 After downloading the paint information, you can register replacements from predefined conversion charts.
 Simply run the `npm start -- predef` command with the options appropriate for you.
+
+## Building
+
+Also you can use these scripts for building your executable file:
+- for linux: `npm run build:linux`;
+- for windows: `npm run build:windows`;
+- for macos: `npm run build:macos`.
+
+Ready executable file, you can find in `./dist` directory.
