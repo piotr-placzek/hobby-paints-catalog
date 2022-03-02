@@ -30,6 +30,7 @@ async function getHtmlSource(url) {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'load' });
+    await page.waitForTimeout(1000);
     const html = await page.content();
     browser.close();
     return html;

@@ -27,7 +27,7 @@ module.exports = {
             MECHA_COLOR: process.env.CATALOG_URL_VA_MECHA_COLOR
         },
         AP: {
-            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS_PAGES
+            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS
         }
     },
     CATALOG_LIMITATIONS: {
