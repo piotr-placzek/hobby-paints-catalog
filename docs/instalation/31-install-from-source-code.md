@@ -5,7 +5,6 @@
 Navigate to the available [releases](https://github.com/piotr-placzek/hobby-paints-catalog/releases) and download source code of selected version.
 
 
-
 ## Preparation
 
 Before start you should be sure that you hav got valid Node.js and npm version.
@@ -102,6 +101,7 @@ To initialize the database with the paint information:
 
 After downloading the paint information, you can register replacements from predefined conversion charts.
 Simply run the `npm start -- predef` command with the options appropriate for you.
+
 
 ## Building
 
