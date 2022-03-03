@@ -3,9 +3,9 @@
 require('dotenv').config();
 
 module.exports = {
-    NODE_ENV: process.env.NODE_ENV,
-    DEBUG: process.env.DEBUG,
-    LOGGER_SEPARATOR: process.env.LOGGER_SEPARATOR,
+    NODE_ENV: process.env.NODE_ENV || 'production',
+    DEBUG: process.env.DEBUG || false,
+    LOGGER_SEPARATOR: process.env.LOGGER_SEPARATOR || ' ',
     SEQUELIZE: require('../config/db.json'),
     CATALOG_URL: {
         GW: {
@@ -27,7 +27,7 @@ module.exports = {
             MECHA_COLOR: process.env.CATALOG_URL_VA_MECHA_COLOR
         },
         AP: {
-            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS_PAGES
+            WARPAINTS: process.env.CATALOG_URL_AP_WARPAINTS
         }
     },
     CATALOG_LIMITATIONS: {

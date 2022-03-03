@@ -1,70 +1,80 @@
 {
-  "name": "hobby-paints-catalog",
-  "version": "1.0.0",
-  "description": "",
-  "bin": "src/index.js",
-
-  "scripts": {
-    "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
-    "start": "NODE_ENV=production node src/index.js",
-    "jest": "NODE_ENV=test TZ=UTC jest",
-    "test": "NODE_ENV=test grunt test",
-    "uglify": "grunt uglify",
-    "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
-    "scrape:all": "node src/index.js scrape -gva",
-    "scrape:gw": "node src/index.js scrape -g",
-    "scrape:va": "node src/index.js scrape -v",
-    "scrape:ap": "node src/index.js scrape -a",
-    "compilation": "rm -rf bin && mkdir bin && pkg .",
-    "postcompilation": "./postcompilation.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/piotr-placzek/hobby-paints-catalog.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/piotr-placzek/hobby-paints-catalog/issues"
-  },
-  "homepage": "https://github.com/piotr-placzek/hobby-paints-catalog#readme",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.2.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.1",
-    "grunt": "^1.4.1",
-    "grunt-cli": "^1.4.3",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-eslint": "^24.0.0",
-    "grunt-run": "^0.8.1",
-    "jest": "^27.3.1",
-    "jit-grunt": "^0.10.0",
-    "pkg": "^5.5.2",
-    "puppeteer": "^11.0.0",
-    "sequelize-cli": "^6.3.0"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "cli-table": "^0.3.11",
-    "colors": "^1.4.0",
-    "dotenv": "^10.0.0",
-    "fs-extra": "^10.0.0",
-    "path": "^0.12.7",
-    "sequelize": "^6.12.0-alpha.1",
-    "sqlite3": "^5.0.2",
-    "yargs": "^17.3.0"
-  },
-  "pkg": {
-    "scripts": "src/**/*.js",
-    "assets": [
-      "src/**/*.json"
-    ],
-    "targets": ["node16-linux-x64", "node16-macos-x64", "node16-win-x64"],
-    "outputPath": "./bin"
-  }
+    "name": "hobby-paints-catalog",
+    "version": "1.1.0",
+    "description": "A simple application to manage paints and their replacements for painters of figures and models.",
+    "author": "Piotr Płaczek <piotr@pplaczek.pl",
+    "license": "CC BY-NC-SA",
+    "homepage": "https://github.com/piotr-placzek/hobby-paints-catalog#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/piotr-placzek/hobby-paints-catalog.git"
+    },
+    "bugs": {
+        "url": "https://github.com/piotr-placzek/hobby-paints-catalog/issues"
+    },
+    "main": "src/index.js",
+    "build": {
+        "appId": "pl.pplaczek.hobby-paints-catalog",
+        "productName": "hpc",
+        "copyright": "Piotr Płaczek <piotr@pplaczek> 2021 CC BY NC SA 4.0 License",
+        "files": [
+            "src"
+        ],
+        "extraResources": [
+            "database_production.sqlite"
+        ]
+    },
+    "scripts": {
+        "postinstall": "electron-builder install-app-deps",
+        "lint": "eslint -c ./grunt/eslint.json **/*.js --ignore-pattern node_modules/",
+        "build": "electron-builder build -lw",
+        "build:linux": "electron-builder build -l",
+        "build:windows": "electron-builder build -w",
+        "build:macos": "electron-builder build -m",
+        "postbuild": "echo NODE_ENV=production > ./dist/.env",
+        "start": "NODE_ENV=production electron .",
+        "start:dev": "NODE_ENV=development electron .",
+        "jest": "NODE_ENV=test TZ=UTC jest",
+        "test": "NODE_ENV=test grunt test",
+        "uglify": "grunt uglify",
+        "migration": "npx sequelize-cli db:migrate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
+        "migration:create": "npx sequelize-cli migration:create --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
+        "model:create": "npx sequelize-cli model:generate --config src/config/db.json --migrations-path src/migrations --seeders-path src/seeders --models-path src/models",
+        "scrape:all": "SCRAPE=1 npm run start:dev --scrape -gva",
+        "scrape:gw": "SCRAPE=1 npm run start:dev -- scrape -g",
+        "scrape:va": "SCRAPE=1 npm run start:dev -- scrape -v",
+        "scrape:ap": "SCRAPE=1 npm run start:dev -- scrape -a",
+        "predef:all": "SCRAPE=1 npm run start:dev -- predef -ae"
+    },
+    "devDependencies": {
+        "electron": "^17.0.0",
+        "electron-builder": "^22.14.13",
+        "eslint": "^7.32.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jest": "^25.2.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.1.1",
+        "grunt": "^1.4.1",
+        "grunt-cli": "^1.4.3",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-eslint": "^24.0.0",
+        "grunt-run": "^0.8.1",
+        "jest": "^27.3.1",
+        "jit-grunt": "^0.10.0",
+        "pkg": "^5.5.2",
+        "puppeteer": "^11.0.0",
+        "sequelize-cli": "^6.3.0"
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.10",
+        "cli-table": "^0.3.11",
+        "colors": "^1.4.0",
+        "dotenv": "^10.0.0",
+        "fs-extra": "^10.0.0",
+        "path": "^0.12.7",
+        "sequelize": "^6.12.0-alpha.1",
+        "sqlite3": "^5.0.2",
+        "yargs": "^17.3.0"
+    }
 }

@@ -1,2 +1,4 @@
 src/migrations/*
 src/models/*
+src/gui/bulma*
+src/gui/tabulator*

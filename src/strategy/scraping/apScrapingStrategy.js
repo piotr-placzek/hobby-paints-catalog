@@ -12,6 +12,9 @@ function apScrapingStrategy(cheerio) {
         const item = cheerio.load(table);
         const imageUrl = item('.ProductCard-Figure div.Image img').attr('src');
         const tradeName = item('.ProductCard-Content .ProductCard-Name').text();
+        if (!imageUrl) {
+            return;
+        }
         const product = productFactory(imageUrl, tradeName);
         products.push(product);
     });
