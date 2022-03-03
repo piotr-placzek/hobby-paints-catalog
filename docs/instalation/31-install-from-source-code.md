@@ -2,8 +2,25 @@
 
 ## Download
 
-This is simpliest way for download and use this app.
 Navigate to the available [releases](https://github.com/piotr-placzek/hobby-paints-catalog/releases) and download source code of selected version.
+
+
+## Preparation
+
+Before start you should be sure that you hav got valid Node.js and npm version.
+
+```
+pplaczek@vms:~$ node -v
+v16.10.0
+pplaczek@vms:~$ npm -v
+8.3.0
+```
+
+If something goes wrong you should [read this article](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/docs/02-requirements.md).
+
+## Downloading
+
+It is essential to start your HPC adventure by downloading the latest possible version of the code. You can do this by downloading/cloning the [repository](https://github.com/piotr-placzek/hobby-paints-catalog) or by selecting one of the [released versions](https://github.com/piotr-placzek/hobby-paints-catalog/releases).
 
 If you want to use `develop` version you can just clone this repository.
 ```
@@ -16,24 +33,6 @@ remote: Total 397 (delta 57), reused 61 (delta 29), pack-reused 272
 Receiving objects: 100% (397/397), 389.23 KiB | 1.35 MiB/s, done.
 Resolving deltas: 100% (178/178), done.
 ```
-
-## Preparation
-
-Before start you should be sure that you hav got valid Node.js and npm version.
-
-## Downloading
-
-It is essential to start your HPC adventure by downloading the latest possible version of the code. You can do this by downloading/cloning the [repository](https://github.com/piotr-placzek/hobby-paints-catalog) or by selecting one of the [released versions](https://github.com/piotr-placzek/hobby-paints-catalog/releases).
-
-
-```
-pplaczek@vms:~$ node -v
-v16.10.0
-pplaczek@vms:~$ npm -v
-8.3.0
-```
-
-If something goes wrong you should [read this article](https://github.com/piotr-placzek/hobby-paints-catalog/blob/develop/docs/02-requirements.md).
 
 ## Dependencies
 
@@ -102,3 +101,13 @@ To initialize the database with the paint information:
 
 After downloading the paint information, you can register replacements from predefined conversion charts.
 Simply run the `npm start -- predef` command with the options appropriate for you.
+
+
+## Building
+
+Also you can use these scripts for building your executable file:
+- for linux: `npm run build:linux`;
+- for windows: `npm run build:windows`;
+- for macos: `npm run build:macos`.
+
+Ready executable file, you can find in `./dist` directory.

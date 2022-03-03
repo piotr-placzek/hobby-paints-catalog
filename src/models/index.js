@@ -9,8 +9,13 @@ const sharedConfig = require('../shared/config');
 const LoggerService = require('../service/loggerService');
 const logger = new LoggerService('database-orm');
 
-logger.log('database config:', dbConfig[sharedConfig.NODE_ENV]);
-const sequelize = new Sequelize(dbConfig[sharedConfig.NODE_ENV]);
+const _dbConfig = dbConfig[sharedConfig.NODE_ENV];
+
+if(!process.env.SCRAPE) {
+    _dbConfig.storage = path.join(__dirname, '../../..', _dbConfig.storage);
+}
+
+const sequelize = new Sequelize(_dbConfig);
 
 const basename = path.basename(__filename);
 const db = {};
