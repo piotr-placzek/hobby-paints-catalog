@@ -1,5 +1,8 @@
 # hobby-paints-catalog
 
+![Tests](https://github.com/piotr-placzek/hobby-paints-catalog/actions/workflows/npm-test.yml/badge.svg)
+![wakatime](https://wakatime.com/badge/user/7c2e708f-9f59-4565-b3d6-cde030e740f2/project/4312be50-9056-4eca-8efe-6ba4c99d1068.svg)
+
 This is a simple application to manage paints and their replacements for painters of figures and models.
 App is totally free and open source. Feel free to contribute, and DON'T USE IT for commercial purposes.
 
