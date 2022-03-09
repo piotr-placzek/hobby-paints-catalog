@@ -30,7 +30,7 @@ function insertData(data) {
 function createTable() {
     table = new Tabulator('#main-table', { //eslint-disable-line no-undef
         data: tableData,
-        height: '90vh',
+        height: '82vh',
         layout: 'fitColumns',
         pagination: 'local',
         paginationCounter: 'rows',
@@ -48,8 +48,8 @@ function createTable() {
                 sorterParams: { locale: true, alignEmptyValues: 'down' }
             },
             {
-                title: 'Series',
-                field: 'series',
+                title: 'Manufacturer',
+                field: 'manufacturer',
                 width: '150px'
             }
         ]
