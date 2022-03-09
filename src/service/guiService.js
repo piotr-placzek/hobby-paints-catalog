@@ -36,7 +36,7 @@ function setupManufacturer(tableName) {
             .join(' ');
     };
 
-    let tmp = new String(tableName);
+    let tmp = new String(tableName); // eslint-disable-line no-new-wrappers
     tmp = tmp.slice(0, -5);
     if (tmp === 'GameWorkshop') {
         tmp = 'GamesWorkshop';

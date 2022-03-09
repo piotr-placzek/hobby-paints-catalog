@@ -99,7 +99,6 @@ function init() {
     ipcRenderer.on('getAllProducts', (_, data) => {
         if (data.length) {
             logger.info('Received', data.length, 'records.');
-            logger.info(data[0])
             insertData(data);
             updateLoadingInfo(tableData.length);
         }
