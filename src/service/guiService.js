@@ -16,10 +16,32 @@ async function getAllProducts(event) {
         logger.info(`Received ${records.length} ${db.models[i]}.`);
         event.reply(
             'getAllProducts',
-            records.map(r => r.dataValues)
+            records.map(r => Object.assign(r.dataValues, { manufacturer: setupManufacturer(db.models[i]) }))
         );
     }
     event.reply('allProductsSent');
+}
+
+/**
+ * @param {string} tableName
+ * @returns {string}
+ */
+function setupManufacturer(tableName) {
+    const splitCamelCaseToString = s => {
+        return s
+            .split(/(?=[A-Z])/)
+            .map(p => {
+                return p[0].toUpperCase() + p.slice(1);
+            })
+            .join(' ');
+    };
+
+    let tmp = new String(tableName);
+    tmp = tmp.slice(0, -5);
+    if (tmp === 'GameWorkshop') {
+        tmp = 'GamesWorkshop';
+    }
+    return splitCamelCaseToString(tmp);
 }
 
 module.exports = {
